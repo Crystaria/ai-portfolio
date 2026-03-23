@@ -6,45 +6,37 @@ titleTemplate: All Projects
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { withBase } from 'vitepress'
 import projectsData from '../_data/downloads.json'
 
 const roles = {
-  builder: { label: 'Application Builder', icon: '🛠️', anchor: 'builder' },
-  contributor: { label: 'Community Contributor', icon: '🤝', anchor: 'contributor' },
-  optimizer: { label: 'Experience Optimizer', icon: '✨', anchor: 'optimizer' }
+  builder: { label: 'Application Builder', labelZh: '应用开发者', icon: '🛠️', anchor: 'builder' },
+  contributor: { label: 'Community Contributor', labelZh: '社区贡献者', icon: '🤝', anchor: 'contributor' },
+  optimizer: { label: 'Experience Optimizer', labelZh: '体验优化师', icon: '✨', anchor: 'optimizer' }
 }
 
-const githubData = ref({})
+const lang = ref('en')
 
-// Fetch GitHub stars on mount
-onMounted(async () => {
-  const githubUrls = new Set()
-  Object.values(projectsData).forEach(p => {
-    if (p.githubUrl) githubUrls.add(p.githubUrl)
-  })
-
-  for (const url of githubUrls) {
-    try {
-      const repo = url.replace('https://github.com/', '')
-      const res = await fetch(`https://api.github.com/repos/${repo}`)
-      if (res.ok) {
-        const data = await res.json()
-        if (data.stargazers_count !== undefined) {
-          githubData.value[url] = data.stargazers_count
-        }
-      }
-      // Silently ignore 404 errors for repos that don't exist yet
-    } catch (e) {
-      // Silently ignore network errors
-    }
-  }
+onMounted(() => {
+  lang.value = new URLSearchParams(window.location.search).get('lang') ||
+               (window.location.pathname.startsWith('/zh/') ? 'zh' : 'en')
 })
 
-const getStars = (project) => {
-  if (project.githubUrl && githubData.value[project.githubUrl] !== undefined) {
-    return githubData.value[project.githubUrl]
+const t = (key, project = null) => {
+  const isZh = lang.value === 'zh'
+  if (project && key === 'name') return isZh ? (project.nameZh || project.name) : project.name
+  if (project && key === 'description') return isZh ? (project.descriptionZh || project.description) : project.description
+  if (project && key === 'roleLabel') return isZh ? (project.roleLabelZh || project.roleLabel) : project.roleLabel
+  const translations = {
+    title: { en: 'All Projects', zh: '全部项目' },
+    explore: { en: 'Explore projects by role:', zh: '按角色浏览项目：' },
+    downloads: { en: 'Downloads', zh: '下载量' },
+    published: { en: 'Published', zh: '已发布' },
+    pending: { en: 'Pending', zh: '待发布' },
+    lastUpdated: { en: 'Updated', zh: '更新' },
+    author: { en: 'Crystaria (with Paw and Kyle)', zh: 'Crystaria (与 Paw 和 Kyle)' }
   }
-  return project.githubStars || 0
+  return translations[key]?.[isZh ? 'zh' : 'en'] || key
 }
 
 const groupedProjects = Object.values(projectsData).reduce((acc, p) => {
@@ -56,32 +48,29 @@ const groupedProjects = Object.values(projectsData).reduce((acc, p) => {
 
 <div class="projects-page">
 
-# All Projects
+# {{ t('title') }}
 
-Explore projects by role:
+{{ t('explore') }}
 
 </div>
 
 <div v-for="(role, key) in roles" :key="key" class="role-section" :id="role.anchor">
 
-## {{ role.icon }} {{ role.label }}
+## {{ role.icon }} {{ lang === 'zh' ? role.labelZh : role.label }}
 
 <div class="project-grid">
   <div v-for="project in groupedProjects[key]" :key="project.slug" class="project-card">
     <div class="card-header">
-      <h3>{{ project.name }}</h3>
-      <span v-if="project.status === 'published'" class="status-badge published">Published</span>
-      <span v-else-if="project.status === 'pending'" class="status-badge pending">Pending</span>
+      <h3>{{ t('name', project) }}</h3>
+      <span v-if="project.status === 'published'" class="status-badge published">{{ t('published') }}</span>
+      <span v-else-if="project.status === 'pending'" class="status-badge pending">{{ t('pending') }}</span>
     </div>
 
-    <p class="description">{{ project.description }}</p>
+    <p class="description">{{ t('description', project) }}</p>
 
     <div class="stats-row">
-      <span v-if="project.downloads" class="stat">
-        <span class="stat-icon">⬇</span> {{ project.downloads }}
-      </span>
-      <span v-if="project.githubUrl" class="stat">
-        <span class="stat-icon">⭐</span> {{ getStars(project) }}
+      <span v-if="project.clawhubUrl && project.downloads" class="stat">
+        <span class="stat-icon">⬇</span> {{ t('downloads') }}: {{ project.downloads }}
       </span>
     </div>
 
@@ -95,8 +84,8 @@ Explore projects by role:
     </div>
 
     <div class="card-footer">
-      <span class="last-updated">Updated: {{ project.lastUpdated }}</span>
-      <span class="author">Crystaria (with Paw and Kyle)</span>
+      <span class="last-updated">{{ t('lastUpdated') }}: {{ project.lastUpdated }}</span>
+      <span class="author">{{ t('author') }}</span>
     </div>
   </div>
 </div>
