@@ -27,12 +27,15 @@ onMounted(async () => {
     try {
       const repo = url.replace('https://github.com/', '')
       const res = await fetch(`https://api.github.com/repos/${repo}`)
-      const data = await res.json()
-      if (data.stargazers_count !== undefined) {
-        githubData.value[url] = data.stargazers_count
+      if (res.ok) {
+        const data = await res.json()
+        if (data.stargazers_count !== undefined) {
+          githubData.value[url] = data.stargazers_count
+        }
       }
+      // Silently ignore 404 errors for repos that don't exist yet
     } catch (e) {
-      console.warn('Failed to fetch GitHub stars for', url)
+      // Silently ignore network errors
     }
   }
 })

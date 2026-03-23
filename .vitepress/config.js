@@ -5,15 +5,10 @@ export default defineConfig({
   title: 'AI Portfolio - Crystaria',
   description: 'Showcasing AI-human collaborative projects',
 
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
-  ],
+  head: [],
 
   themeConfig: {
-    logo: {
-      src: '/logo.png',
-      alt: 'Portfolio Logo'
-    },
+    logo: '/logo.png',
 
     nav: [
       { text: 'Home', link: '/' },
