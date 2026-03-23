@@ -4,18 +4,7 @@ title: SillyTavern Mac Installer
 ---
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const stars = ref(0)
-
-onMounted(async () => {
-  try {
-    const res = await fetch('https://api.github.com/repos/Crystaria/sillytavern-mac-installer')
-    const data = await res.json()
-    if (data.stargazers_count !== undefined) stars.value = data.stargazers_count
-  } catch (e) {
-    console.warn('Failed to fetch GitHub stars')
-  }
-})
+const stars = 8
 </script>
 
 <div class="project-detail">
