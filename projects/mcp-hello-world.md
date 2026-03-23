@@ -4,18 +4,7 @@ title: MCP Hello World
 ---
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const stars = ref(0)
-
-onMounted(async () => {
-  try {
-    const res = await fetch('https://api.github.com/repos/Crystaria/mcp-hello-world')
-    const data = await res.json()
-    if (data.stargazers_count !== undefined) stars.value = data.stargazers_count
-  } catch (e) {
-    console.warn('Failed to fetch GitHub stars')
-  }
-})
+const stars = 0
 </script>
 
 <div class="project-detail">
@@ -46,7 +35,6 @@ Minimal MCP server example - the "Hello World" of MCP development.
 ## 🔗 Links
 
 - 🦞 [**ClawHub Page**](https://clawhub.ai/Crystaria/mcp-hello-world)
-- 📂 [**GitHub Repository**](https://github.com/Crystaria/mcp-hello-world)
 
 ---
 
