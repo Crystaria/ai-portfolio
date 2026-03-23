@@ -4,18 +4,7 @@ title: Linguistic Landscape Analyzer
 ---
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const stars = ref(0)
-
-onMounted(async () => {
-  try {
-    const res = await fetch('https://api.github.com/repos/Crystaria/linguistic-landscape-analyzer')
-    const data = await res.json()
-    if (data.stargazers_count !== undefined) stars.value = data.stargazers_count
-  } catch (e) {
-    console.warn('Failed to fetch GitHub stars')
-  }
-})
+const stars = 0
 </script>
 
 <div class="project-detail">
@@ -46,7 +35,6 @@ MCP tool for linguistic landscape analysis - sentiment analysis, keyword extract
 ## 🔗 Links
 
 - 🦞 [**ClawHub Page**](https://clawhub.ai/Crystaria/linguistic-landscape-analyzer)
-- 📂 [**GitHub Repository**](https://github.com/Crystaria/linguistic-landscape-analyzer)
 
 ---
 

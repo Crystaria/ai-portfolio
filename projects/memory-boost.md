@@ -4,18 +4,7 @@ title: Memory Boost
 ---
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const stars = ref(0)
-
-onMounted(async () => {
-  try {
-    const res = await fetch('https://api.github.com/repos/Crystaria/memory-boost')
-    const data = await res.json()
-    if (data.stargazers_count !== undefined) stars.value = data.stargazers_count
-  } catch (e) {
-    console.warn('Failed to fetch GitHub stars')
-  }
-})
+const stars = 0
 </script>
 
 <div class="project-detail">
@@ -46,7 +35,6 @@ Simple text-based memory system for AI assistants - never lose context again.
 ## 🔗 Links
 
 - 🦞 [**ClawHub Page**](https://clawhub.ai/Crystaria/memory-boost)
-- 📂 [**GitHub Repository**](https://github.com/Crystaria/memory-boost)
 
 ---
 
