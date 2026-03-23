@@ -1,0 +1,225 @@
+/* custom.css - GitHub Dark Theme */
+
+:root {
+  /* Colors */
+  --vp-c-bg: #0d1117;
+  --vp-c-bg-soft: #161b22;
+  --vp-c-bg-mute: #010409;
+  --vp-c-border: #30363d;
+  --vp-c-border-muted: #21262d;
+  --vp-c-text: #c9d1d9;
+  --vp-c-text-mute: #8b949e;
+  --vp-c-text-subtle: #6e7681;
+  --vp-c-brand: #58a6ff;
+  --vp-c-success: #3fb950;
+  --vp-c-warning: #d29922;
+  --vp-c-danger: #f85149;
+  --vp-c-brand-bg: #238636;
+
+  /* Spacing */
+  --vp-space-3: 16px;
+  --vp-space-4: 24px;
+  --vp-space-5: 32px;
+
+  /* Typography */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* Border Radius */
+  --vp-radius-small: 6px;
+  --vp-radius-medium: 8px;
+  --vp-radius-large: 12px;
+
+  /* Layout */
+  --vp-layout-max-width: 1440px;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text);
+  font-family: var(--vp-font-family-base);
+}
+
+/* VitePress Overrides */
+.VPHome, .VPPage {
+  background-color: var(--vp-c-bg);
+}
+
+.VPNavBar {
+  background-color: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.VPSidebar {
+  background-color: var(--vp-c-bg);
+  border-right: 1px solid var(--vp-c-border);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: var(--vp-radius-medium);
+  padding: var(--vp-space-4);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--vp-c-text-mute);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Role Tags */
+.role-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: rgba(88, 166, 255, 0.1);
+  border: 1px solid var(--vp-c-brand);
+  border-radius: 9999px;
+  color: var(--vp-c-brand);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Details/Summary */
+details {
+  background-color: var(--vp-c-bg-mute);
+  border: 1px solid var(--vp-c-border-muted);
+  border-radius: var(--vp-radius-medium);
+  padding: var(--vp-space-3);
+  margin-top: var(--vp-space-3);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--vp-c-text);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+summary:hover {
+  color: var(--vp-c-brand);
+}
+
+details[open] {
+  border-color: var(--vp-c-brand);
+}
+
+/* Links */
+a {
+  color: var(--vp-c-brand);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Buttons */
+.VPButton {
+  border-radius: var(--vp-radius-small);
+  font-weight: 500;
+}
+
+.VPButton.brand {
+  background-color: var(--vp-c-brand);
+  border-color: var(--vp-c-brand);
+}
+
+.VPButton.alt {
+  background-color: transparent;
+  border-color: var(--vp-c-border);
+  color: var(--vp-c-text);
+}
+
+.VPButton.alt:hover {
+  border-color: var(--vp-c-text-mute);
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Code Blocks */
+pre, code {
+  font-family: var(--vp-font-family-mono);
+}
+
+pre {
+  background-color: var(--vp-c-bg-mute) !important;
+  border: 1px solid var(--vp-c-border);
+}
+
+/* Table Styles */
+table {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: var(--vp-radius-medium);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-mute);
+  font-weight: 500;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--vp-c-border-muted);
+  text-align: left;
+}
+
+/* Hero Section */
+.VPHero {
+  color: var(--vp-c-text);
+}
+
+.VPHero h1 {
+  color: var(--vp-c-text);
+}
+
+.VPHero .text {
+  color: var(--vp-c-text-mute);
+}
+
+/* Features Grid */
+.VPFeatures {
+  padding: 4rem 0;
+}
+
+.VPFeatures .VPLink:hover {
+  background-color: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-border);
+}
+
+/* Footer */
+.VPFooter {
+  border-top: 1px solid var(--vp-c-border);
+  background-color: var(--vp-c-bg);
+}
+
+/* Custom Components */
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background-color: rgba(88, 166, 255, 0.1);
+  border-radius: var(--vp-radius-small);
+  font-size: 0.8rem;
+  color: var(--vp-c-brand);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .VPSidebar {
+    display: none;
+  }
+
+  .VPNavBar {
+    padding: 0.5rem 1rem;
+  }
+}

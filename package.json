@@ -1,0 +1,17 @@
+{
+  "name": "ai-portfolio",
+  "version": "1.0.0",
+  "description": "AI Portfolio - Crystaria (with Paw and Kyle)",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": ["portfolio", "ai", "vitepress"],
+  "author": "Crystaria (with Paw and Kyle)",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
