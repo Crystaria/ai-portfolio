@@ -1,42 +1,35 @@
 ---
 layout: page
-title: Projects
-titleTemplate: All Projects
+title: 项目
+titleTemplate: 全部项目
 ---
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { withBase } from 'vitepress'
-import projectsData from '../_data/downloads.json'
+import projectsData from '../../_data/downloads.json'
 
 const roles = {
-  builder: { label: 'Application Builder', labelZh: '应用开发者', icon: '🛠️', anchor: 'builder' },
-  contributor: { label: 'Community Contributor', labelZh: '社区贡献者', icon: '🤝', anchor: 'contributor' },
-  optimizer: { label: 'Experience Optimizer', labelZh: '体验优化师', icon: '✨', anchor: 'optimizer' }
+  builder: { label: '应用开发者', icon: '🛠️', anchor: 'builder' },
+  contributor: { label: '社区贡献者', icon: '🤝', anchor: 'contributor' },
+  optimizer: { label: '体验优化师', icon: '✨', anchor: 'optimizer' }
 }
 
-const lang = ref('en')
-
-onMounted(() => {
-  lang.value = new URLSearchParams(window.location.search).get('lang') ||
-               (window.location.pathname.startsWith('/zh/') ? 'zh' : 'en')
-})
+const lang = ref('zh')
 
 const t = (key, project = null) => {
-  const isZh = lang.value === 'zh'
-  if (project && key === 'name') return isZh ? (project.nameZh || project.name) : project.name
-  if (project && key === 'description') return isZh ? (project.descriptionZh || project.description) : project.description
-  if (project && key === 'roleLabel') return isZh ? (project.roleLabelZh || project.roleLabel) : project.roleLabel
+  if (project && key === 'name') return project.nameZh || project.name
+  if (project && key === 'description') return project.descriptionZh || project.description
+  if (project && key === 'roleLabel') return project.roleLabelZh || project.roleLabel
   const translations = {
-    title: { en: 'All Projects', zh: '全部项目' },
-    explore: { en: 'Explore projects by role:', zh: '按角色浏览项目：' },
-    downloads: { en: 'Downloads', zh: '下载量' },
-    published: { en: 'Published', zh: '已发布' },
-    pending: { en: 'Pending', zh: '待发布' },
-    lastUpdated: { en: 'Updated', zh: '更新' },
-    author: { en: 'Crystaria (with Paw and Kyle)', zh: 'Crystaria (与 Paw 和 Kyle)' }
+    title: '全部项目',
+    explore: '按角色浏览项目：',
+    downloads: '下载量',
+    published: '已发布',
+    pending: '待发布',
+    lastUpdated: '更新',
+    author: 'Crystaria (与 Paw 和 Kyle)'
   }
-  return translations[key]?.[isZh ? 'zh' : 'en'] || key
+  return translations[key] || key
 }
 
 const groupedProjects = Object.values(projectsData).reduce((acc, p) => {
@@ -56,7 +49,7 @@ const groupedProjects = Object.values(projectsData).reduce((acc, p) => {
 
 <div v-for="(role, key) in roles" :key="key" class="role-section" :id="role.anchor">
 
-## {{ role.icon }} {{ lang === 'zh' ? role.labelZh : role.label }}
+## {{ role.icon }} {{ role.label }}
 
 <div class="project-grid">
   <div v-for="project in groupedProjects[key]" :key="project.slug" class="project-card">
