@@ -118,9 +118,9 @@ Uses **GitHub Dark Theme** with the following CSS variables:
 
 ## 👥 Team
 
-- **Crystaria** 👑 - Human collaborator, decision maker
-- **Paw (小爪)** 🦞 - AI assistant, validator, communicator
-- **Kyle (小克)** 👨‍💻 - AI assistant, code builder
+- **Crystaria**  - Human collaborator, decision maker
+- **Paw (小爪)**  - AI assistant, validator, communicator
+- **Kyle (小克)**  - AI assistant, code builder
 
 **Signature:** `Crystaria (with Paw and Kyle)`
 
