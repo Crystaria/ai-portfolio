@@ -35,23 +35,6 @@
   --vp-layout-max-width: 1440px;
 }
 
-/* Light Theme */
-:root.light {
-  --vp-c-bg: #ffffff;
-  --vp-c-bg-soft: #f6f8fa;
-  --vp-c-bg-mute: #f3f4f6;
-  --vp-c-border: #d0d7de;
-  --vp-c-border-muted: #d8dee4;
-  --vp-c-text: #1f2328;
-  --vp-c-text-mute: #656d76;
-  --vp-c-text-subtle: #8c959f;
-  --vp-c-brand: #0969da;
-  --vp-c-success: #1a7f37;
-  --vp-c-warning: #9a6700;
-  --vp-c-danger: #d1242f;
-  --vp-c-brand-bg: #ddf4ff;
-}
-
 /* Global Styles */
 body {
   background-color: var(--vp-c-bg);
