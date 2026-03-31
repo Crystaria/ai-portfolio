@@ -103,7 +103,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    appearance: 'dark',
+    appearance: false,
     logo: '/logo.png',
 
     nav: [
