@@ -228,3 +228,10 @@ th, td {
     padding: 0.5rem 1rem;
   }
 }
+
+/* Force hide theme switcher */
+.VPNavBarAppearance,
+.VPSwitchAppearance,
+.appearance-action {
+  display: none !important;
+}
