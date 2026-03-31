@@ -159,6 +159,7 @@ export default defineConfig({
   },
 
   markdown: {
+    vueComponent: true,
     theme: {
       light: 'github-light',
       dark: 'github-dark'
