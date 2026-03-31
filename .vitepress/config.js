@@ -15,6 +15,7 @@ export default defineConfig({
       title: 'AI Portfolio - Crystaria',
       description: 'Showcasing AI-human collaborative projects',
       themeConfig: {
+        appearance: false,
         nav: [
           { text: 'Home', link: '/' },
           { text: 'Projects', link: '/projects/' }
@@ -61,6 +62,7 @@ export default defineConfig({
       title: 'AI 作品集 - Crystaria',
       description: '展示 AI 与人类协作的项目',
       themeConfig: {
+        appearance: false,
         nav: [
           { text: '首页', link: '/zh/' },
           { text: '项目', link: '/zh/projects/' }
