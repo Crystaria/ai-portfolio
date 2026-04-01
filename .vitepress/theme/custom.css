@@ -1,7 +1,11 @@
 /* custom.css - GitHub Dark Theme */
 
-/* 强制暗色主题 - 最高优先级 */
-html, body {
+/* === 最高优先级强制暗色主题 === */
+/* 覆盖 VitePress 主题切换脚本可能设置的任何状态 */
+html,
+html.light,
+html.dark,
+body {
   background-color: #0d1117 !important;
   color: #c9d1d9 !important;
 }
@@ -18,11 +22,14 @@ pre, code,
 :root.light,
 :root.dark,
 html:not(.dark),
-html.dark {
+html.dark,
+html,
+html * {
   /* Colors - Dark Mode */
   --vp-c-bg: #0d1117 !important;
   --vp-c-bg-soft: #161b22 !important;
   --vp-c-bg-mute: #010409 !important;
+  --vp-c-bg-alt: #0d1117 !important;
   --vp-c-border: #30363d !important;
   --vp-c-border-muted: #21262d !important;
   --vp-c-text: #c9d1d9 !important;
@@ -50,6 +57,17 @@ html.dark {
 
   /* Layout */
   --vp-layout-max-width: 1440px;
+}
+
+/* Additional override for VitePress navbar and sidebar */
+.VPNavBar,
+.VPSidebar,
+.VPDoc,
+.VPContent,
+.VPLink,
+.VPFeature {
+  background-color: var(--vp-c-bg) !important;
+  color: var(--vp-c-text) !important;
 }
 
 /* Global Styles */
@@ -247,4 +265,30 @@ th, td {
 .VPSwitchAppearance,
 .appearance-action {
   display: none !important;
+}
+
+/* === 强制暗色主题 - 防止 VitePress 初始化时的闪烁 === */
+/* VitePress 会在客户端设置 data-theme 属性，需要提前覆盖 */
+html[data-theme='light'],
+html[data-theme='dark'],
+html[class*='light'],
+html[class*='dark'] {
+  background-color: #0d1117 !important;
+}
+
+/* 防止 VPContent 和 VPPage 出现亮色背景 */
+.VPContent,
+.VPPage,
+.VPDoc,
+.VPDocContainer,
+.VPDocAside,
+.VPDocFooter {
+  background-color: var(--vp-c-bg) !important;
+}
+
+/* 防止导航栏和侧边栏出现颜色不一致 */
+.VPNavBar:not(.top),
+.VPLocalNav {
+  background-color: var(--vp-c-bg) !important;
+  border-bottom-color: var(--vp-c-border) !important;
 }
