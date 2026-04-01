@@ -19,7 +19,8 @@ Automated daily/weekly report generator for Chinese-speaking professionals.
 
 | Metric | Value |
 |--------|-------|
-| Last Updated | 2026-03-23 |
+| Downloads | Available on ClawHub |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

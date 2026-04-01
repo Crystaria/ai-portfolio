@@ -7,7 +7,7 @@ title: Social Media Monitor
 
 # Social Media Monitor
 
-**Role:** Toolchain Integrator 🔗
+**Role:** Application Builder 🛠️
 
 Social media sentiment analysis tool for brands and marketers - negative alerts, volume trends, and weekly reports.
 
@@ -20,7 +20,7 @@ Social media sentiment analysis tool for brands and marketers - negative alerts,
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| Last Updated | 2026-03-23 |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

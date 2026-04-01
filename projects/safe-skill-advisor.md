@@ -19,7 +19,8 @@ Safety advisor for MCP skill development - security best practices for AI assist
 
 | Metric | Value |
 |--------|-------|
-| Last Updated | 2026-03-23 |
+| Downloads | Available on ClawHub |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>
