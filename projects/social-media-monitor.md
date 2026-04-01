@@ -3,6 +3,13 @@ layout: page
 title: Social Media Monitor
 ---
 
+<script setup>
+import projectsData from '../.vitepress/_data/downloads.json'
+
+const project = projectsData['social-media-monitor']
+const downloadsText = project.downloads || 0
+</script>
+
 <div class="project-detail">
 
 # Social Media Monitor
@@ -19,8 +26,8 @@ Social media sentiment analysis tool for brands and marketers - negative alerts,
 
 | Metric | Value |
 |--------|-------|
-| Downloads | Available on ClawHub |
-| Last Updated | 2026-04-01 |
+| Downloads | {{ downloadsText }} |
+| Last Updated | {{ project.lastUpdated }} |
 | Status | <span class="status-published">Published</span> |
 
 </div>

@@ -3,6 +3,13 @@ layout: page
 title: Safe Skill Advisor
 ---
 
+<script setup>
+import projectsData from '../.vitepress/_data/downloads.json'
+
+const project = projectsData['safe-skill-advisor']
+const downloadsText = project.downloads || 0
+</script>
+
 <div class="project-detail">
 
 # Safe Skill Advisor
@@ -19,8 +26,8 @@ Safety advisor for MCP skill development - security best practices for AI assist
 
 | Metric | Value |
 |--------|-------|
-| Downloads | Available on ClawHub |
-| Last Updated | 2026-04-01 |
+| Downloads | {{ downloadsText }} |
+| Last Updated | {{ project.lastUpdated }} |
 | Status | <span class="status-published">Published</span> |
 
 </div>

@@ -3,6 +3,13 @@ layout: page
 title: Chinese Daily Report Generator
 ---
 
+<script setup>
+import projectsData from '../.vitepress/_data/downloads.json'
+
+const project = projectsData['chinese-daily-report-generator']
+const downloadsText = project.downloads || 0
+</script>
+
 <div class="project-detail">
 
 # Chinese Daily Report Generator
@@ -19,8 +26,8 @@ Automated daily/weekly report generator for Chinese-speaking professionals.
 
 | Metric | Value |
 |--------|-------|
-| Downloads | Available on ClawHub |
-| Last Updated | 2026-04-01 |
+| Downloads | {{ downloadsText }} |
+| Last Updated | {{ project.lastUpdated }} |
 | Status | <span class="status-published">Published</span> |
 
 </div>
