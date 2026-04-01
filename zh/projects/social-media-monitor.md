@@ -3,10 +3,6 @@ layout: page
 title: 社交媒体监控
 ---
 
-<script setup>
-const downloads = 98
-</script>
-
 <div class="project-detail">
 
 # 社交媒体监控
@@ -23,7 +19,6 @@ const downloads = 98
 
 | 指标 | 值 |
 |------|-----|
-| 下载量 | {{ downloads }} |
 | 最后更新 | 2026-03-23 |
 | 状态 | <span class="status-published">已发布</span> |
 

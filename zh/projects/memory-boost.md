@@ -3,10 +3,6 @@ layout: page
 title: Memory Boost
 ---
 
-<script setup>
-const downloads = 127
-</script>
-
 <div class="project-detail">
 
 # Memory Boost
@@ -23,7 +19,6 @@ const downloads = 127
 
 | 指标 | 值 |
 |------|-----|
-| 下载量 | {{ downloads }} |
 | 最后更新 | 2026-03-23 |
 | 状态 | <span class="status-published">已发布</span> |
 

@@ -3,10 +3,6 @@ layout: page
 title: Social Media Monitor
 ---
 
-<script setup>
-const stars = 0
-</script>
-
 <div class="project-detail">
 
 # Social Media Monitor
@@ -24,7 +20,6 @@ Social media sentiment analysis tool for brands and marketers - negative alerts,
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| GitHub Stars | {{ stars }} ⭐ |
 | Last Updated | 2026-03-23 |
 | Status | <span class="status-published">Published</span> |
 

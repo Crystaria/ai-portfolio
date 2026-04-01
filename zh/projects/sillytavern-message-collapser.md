@@ -3,10 +3,6 @@ layout: page
 title: SillyTavern Message Collapser
 ---
 
-<script setup>
-const stars = 12
-</script>
-
 <div class="project-detail">
 
 # SillyTavern Message Collapser
@@ -23,7 +19,6 @@ const stars = 12
 
 | 指标 | 值 |
 |------|-----|
-| GitHub Stars | {{ stars }} ⭐ |
 | 最后更新 | 2026-03-23 |
 | 状态 | <span class="status-published">已发布</span> |
 

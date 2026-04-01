@@ -1,5 +1,18 @@
 /* custom.css - GitHub Dark Theme */
 
+/* 强制暗色主题 - 最高优先级 */
+html, body {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+
+/* 覆盖所有可能的亮色背景 */
+.shiki, .shiki span,
+pre, code,
+.vp-code, .vp-code span {
+  color-scheme: dark !important;
+}
+
 /* Force Dark Mode - Override all theme variations */
 :root,
 :root.light,

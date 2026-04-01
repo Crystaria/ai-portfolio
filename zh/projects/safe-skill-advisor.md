@@ -3,10 +3,6 @@ layout: page
 title: Safe Skill Advisor
 ---
 
-<script setup>
-const downloads = 64
-</script>
-
 <div class="project-detail">
 
 # Safe Skill Advisor
@@ -23,7 +19,6 @@ MCP 技能开发的安全顾问。
 
 | 指标 | 值 |
 |------|-----|
-| 下载量 | {{ downloads }} |
 | 最后更新 | 2026-03-23 |
 | 状态 | <span class="status-published">已发布</span> |
 

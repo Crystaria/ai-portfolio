@@ -3,10 +3,6 @@ layout: page
 title: SillyTavern Mac Installer
 ---
 
-<script setup>
-const stars = 8
-</script>
-
 <div class="project-detail">
 
 # SillyTavern Mac Installer
@@ -24,7 +20,6 @@ One-click installer for SillyTavern on macOS - making AI tools accessible to eve
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on GitHub |
-| GitHub Stars | {{ stars }} ⭐ |
 | Last Updated | 2026-03-23 |
 | Status | <span class="status-published">Published</span> |
 

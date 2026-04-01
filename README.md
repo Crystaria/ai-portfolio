@@ -83,7 +83,6 @@ Uses **GitHub Dark Theme** with the following CSS variables:
 | Data Type | Source | Update Method |
 |-----------|--------|---------------|
 | Downloads | `_data/downloads.json` | Static (manual update) |
-| GitHub Stars | GitHub API | Dynamic (frontend fetch) |
 | Project Info | Frontmatter | Static (manual update) |
 
 **Note:** ClawHub has no public API. Download counts are tracked manually.

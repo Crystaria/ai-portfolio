@@ -3,10 +3,6 @@ layout: page
 title: SillyTavern Mac 安装器
 ---
 
-<script setup>
-const stars = 8
-</script>
-
 <div class="project-detail">
 
 # SillyTavern Mac 安装器
@@ -23,7 +19,6 @@ macOS 上一键安装 SillyTavern - 让 AI 工具对每个人都可访问。
 
 | 指标 | 值 |
 |------|-----|
-| GitHub Stars | {{ stars }} ⭐ |
 | 最后更新 | 2026-03-23 |
 | 状态 | <span class="status-published">已发布</span> |
 

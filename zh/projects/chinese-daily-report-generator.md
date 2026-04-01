@@ -3,10 +3,6 @@ layout: page
 title: 中文日报生成器
 ---
 
-<script setup>
-const downloads = 256
-</script>
-
 <div class="project-detail">
 
 # 中文日报生成器
@@ -23,7 +19,6 @@ const downloads = 256
 
 | 指标 | 值 |
 |------|-----|
-| 下载量 | {{ downloads }} |
 | 最后更新 | 2026-03-23 |
 | 状态 | <span class="status-published">已发布</span> |
 

@@ -3,10 +3,6 @@ layout: page
 title: SillyTavern Message Collapser
 ---
 
-<script setup>
-const stars = 12
-</script>
-
 <div class="project-detail">
 
 # SillyTavern Message Collapser
@@ -24,7 +20,6 @@ A SillyTavern extension that automatically collapses long messages in chat, keep
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on GitHub |
-| GitHub Stars | {{ stars }} ⭐ |
 | Last Updated | 2026-03-23 |
 | Status | <span class="status-published">Published</span> |
 
