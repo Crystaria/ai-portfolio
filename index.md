@@ -6,7 +6,7 @@ titleTemplate: Showcasing AI-Human Collaboration
 hero:
   name: AI Portfolio
   text: Crystaria (with Paw and Kyle)
-  tagline: Showcasing AI-human collaborative projects across four roles
+  tagline: Showcasing AI-human collaborative projects across three roles
   actions:
     - theme: brand
       text: View Projects
@@ -68,7 +68,7 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 
 ---
 
-*Last updated: March 23, 2026*
+*Last updated: April 1, 2026*
 
 </div>
 
