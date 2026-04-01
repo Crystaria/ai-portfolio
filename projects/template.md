@@ -8,8 +8,7 @@
 
 ## 📊 Stats
 
-- **Downloads:** [Number]
-- **GitHub Stars:** [Number]
+- **Downloads:** [Number or "Available on ClawHub/GitHub"]
 
 ---
 

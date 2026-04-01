@@ -3,10 +3,6 @@ layout: page
 title: Memory Boost
 ---
 
-<script setup>
-const stars = 0
-</script>
-
 <div class="project-detail">
 
 # Memory Boost
@@ -24,7 +20,6 @@ Simple text-based memory system for AI assistants - never lose context again.
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| GitHub Stars | {{ stars }} ⭐ |
 | Last Updated | 2026-03-23 |
 | Status | <span class="status-published">Published</span> |
 

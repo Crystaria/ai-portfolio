@@ -3,10 +3,6 @@ layout: page
 title: Linguistic Landscape Analyzer
 ---
 
-<script setup>
-const stars = 0
-</script>
-
 <div class="project-detail">
 
 # Linguistic Landscape Analyzer
@@ -24,7 +20,6 @@ MCP tool for linguistic landscape analysis - sentiment analysis, keyword extract
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| GitHub Stars | {{ stars }} ⭐ |
 | Last Updated | 2026-03-23 |
 | Status | <span class="status-published">Published</span> |
 

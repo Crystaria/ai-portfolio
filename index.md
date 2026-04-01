@@ -65,7 +65,6 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 
 - **ClawHub Skills**: [Browse on ClawHub](https://clawhub.ai/Crystaria)
 - **GitHub**: [github.com/Crystaria](https://github.com/Crystaria)
-- **SillyTavern Message Collapser**: [View Extension](https://github.com/Crystaria/SillyTavern-MessageCollapser)
 
 ---
 

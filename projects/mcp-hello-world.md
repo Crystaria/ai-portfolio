@@ -3,10 +3,6 @@ layout: page
 title: MCP Hello World
 ---
 
-<script setup>
-const stars = 0
-</script>
-
 <div class="project-detail">
 
 # MCP Hello World
@@ -24,7 +20,6 @@ Minimal MCP server example - the "Hello World" of MCP development.
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| GitHub Stars | {{ stars }} ⭐ |
 | Last Updated | 2026-03-23 |
 | Status | <span class="status-published">Published</span> |
 
