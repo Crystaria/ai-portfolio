@@ -119,6 +119,12 @@ body {
   font-weight: 500;
 }
 
+/* Status Tags */
+.status-official {
+  color: #a371f7;
+  font-weight: 500;
+}
+
 /* Details/Summary */
 details {
   background-color: var(--vp-c-bg-mute);

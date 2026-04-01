@@ -22,6 +22,7 @@ A SillyTavern extension that automatically collapses long messages in chat, keep
 | Downloads | Available on GitHub |
 | Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
+| Recognition | <span class="status-official">Officially Listed</span> |
 
 </div>
 
@@ -30,6 +31,7 @@ A SillyTavern extension that automatically collapses long messages in chat, keep
 ## 🔗 Links
 
 - 📂 [**GitHub Repository**](https://github.com/Crystaria/SillyTavern-MessageCollapser)
+- ✅ [**SillyTavern-Content PR #43**](https://github.com/SillyTavern/SillyTavern-Content/pull/43) (Merged)
 
 ---
 

@@ -6,12 +6,11 @@
 
 ## 🎯 About
 
-This portfolio demonstrates my work as a **human-AI collaborator** across four distinct roles:
+This portfolio demonstrates my work as a **human-AI collaborator** across three distinct roles:
 
 | Role | Description | Projects |
 |------|-------------|----------|
-| 🛠️ **Application Builder** | Building standalone MCP skills and tools | 2 |
-| 🔗 **Toolchain Integrator** | Integrating MCP servers with AI workflows | 5 |
+| 🛠️ **Application Builder** | Building standalone MCP skills and tools | 6 |
 | 🤝 **Community Contributor** | Contributing to open-source projects | 1 |
 | ✨ **Experience Optimizer** | Creating installers for better UX | 1 |
 
@@ -85,7 +84,7 @@ Uses **GitHub Dark Theme** with the following CSS variables:
 | Downloads | `_data/downloads.json` | Static (manual update) |
 | Project Info | Frontmatter | Static (manual update) |
 
-**Note:** ClawHub has no public API. Download counts are tracked manually.
+**Note:** ClawHub has no public API. Download counts are synced automatically via daily cron job.
 
 ---
 
@@ -131,4 +130,4 @@ MIT License
 
 ---
 
-*Last updated: March 23, 2026*
+*Last updated: April 1, 2026*
