@@ -7,7 +7,7 @@ title: Memory Boost
 
 # Memory Boost
 
-**Role:** Toolchain Integrator 🔗
+**Role:** Application Builder 🛠️
 
 Simple text-based memory system for AI assistants - never lose context again.
 
@@ -20,7 +20,7 @@ Simple text-based memory system for AI assistants - never lose context again.
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| Last Updated | 2026-03-23 |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

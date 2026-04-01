@@ -20,7 +20,7 @@ One-click installer for SillyTavern on macOS - making AI tools accessible to eve
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on GitHub |
-| Last Updated | 2026-03-23 |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

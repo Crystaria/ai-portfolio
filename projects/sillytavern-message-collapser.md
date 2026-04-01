@@ -20,7 +20,7 @@ A SillyTavern extension that automatically collapses long messages in chat, keep
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on GitHub |
-| Last Updated | 2026-03-23 |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

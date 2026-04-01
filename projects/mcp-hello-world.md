@@ -7,7 +7,7 @@ title: MCP Hello World
 
 # MCP Hello World
 
-**Role:** Toolchain Integrator 🔗
+**Role:** Application Builder 🛠️
 
 Minimal MCP server example - the "Hello World" of MCP development.
 
@@ -20,7 +20,7 @@ Minimal MCP server example - the "Hello World" of MCP development.
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| Last Updated | 2026-03-23 |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

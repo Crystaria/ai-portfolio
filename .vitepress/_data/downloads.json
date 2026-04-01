@@ -10,8 +10,8 @@
     "descriptionZh": "基于文本的 AI 助手记忆系统 - 不再丢失上下文",
     "clawhubUrl": "https://clawhub.ai/Crystaria/memory-boost",
     "githubUrl": null,
-    "downloads": 127,
-    "lastUpdated": "2026-03-23",
+    "downloads": 226,
+    "lastUpdated": "2026-04-01",
     "status": "published"
   },
   "mcp-hello-world": {
@@ -26,7 +26,7 @@
     "clawhubUrl": "https://clawhub.ai/Crystaria/mcp-hello-world",
     "githubUrl": null,
     "downloads": 89,
-    "lastUpdated": "2026-03-23",
+    "lastUpdated": "2026-04-01",
     "status": "published"
   },
   "chinese-daily-report-generator": {
@@ -40,8 +40,8 @@
     "descriptionZh": "面向专业人士的自动化日报/周报生成器",
     "clawhubUrl": "https://clawhub.ai/Crystaria/chinese-daily-report-generator",
     "githubUrl": null,
-    "downloads": 256,
-    "lastUpdated": "2026-03-23",
+    "downloads": 320,
+    "lastUpdated": "2026-04-01",
     "status": "published"
   },
   "safe-skill-advisor": {
@@ -55,8 +55,8 @@
     "descriptionZh": "MCP 技能开发的安全顾问",
     "clawhubUrl": "https://clawhub.ai/Crystaria/safe-skill-advisor",
     "githubUrl": null,
-    "downloads": 64,
-    "lastUpdated": "2026-03-23",
+    "downloads": 128,
+    "lastUpdated": "2026-04-01",
     "status": "published"
   },
   "linguistic-landscape-analyzer": {
@@ -70,8 +70,8 @@
     "descriptionZh": "语言景观分析 MCP 工具 - 情感分析、关键词提取、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/linguistic-landscape-analyzer",
     "githubUrl": null,
-    "downloads": 143,
-    "lastUpdated": "2026-03-23",
+    "downloads": 198,
+    "lastUpdated": "2026-04-01",
     "status": "published"
   },
   "social-media-monitor": {
@@ -85,8 +85,8 @@
     "descriptionZh": "社交媒体情感分析 - 负面预警、音量趋势、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/social-media-monitor",
     "githubUrl": null,
-    "downloads": 98,
-    "lastUpdated": "2026-03-23",
+    "downloads": 145,
+    "lastUpdated": "2026-04-01",
     "status": "published"
   },
   "sillytavern-message-collapser": {

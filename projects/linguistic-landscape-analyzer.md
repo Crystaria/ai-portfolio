@@ -7,7 +7,7 @@ title: Linguistic Landscape Analyzer
 
 # Linguistic Landscape Analyzer
 
-**Role:** Toolchain Integrator 🔗
+**Role:** Application Builder 🛠️
 
 MCP tool for linguistic landscape analysis - sentiment analysis, keyword extraction, and weekly reports.
 
@@ -20,7 +20,7 @@ MCP tool for linguistic landscape analysis - sentiment analysis, keyword extract
 | Metric | Value |
 |--------|-------|
 | Downloads | Available on ClawHub |
-| Last Updated | 2026-03-23 |
+| Last Updated | 2026-04-01 |
 | Status | <span class="status-published">Published</span> |
 
 </div>

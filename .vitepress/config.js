@@ -40,7 +40,7 @@ export default defineConfig({
                 { text: 'Linguistic Landscape', link: '/projects/linguistic-landscape-analyzer' },
                 { text: 'Social Media Monitor', link: '/projects/social-media-monitor' },
                 { text: 'SillyTavern Message Collapser', link: '/projects/sillytavern-message-collapser' },
-                { text: 'Mac Installer', link: '/projects/sillytavern-mac-installer' }
+                { text: 'SillyTavern Mac Installer', link: '/projects/sillytavern-mac-installer' }
               ]
             }
           ]
