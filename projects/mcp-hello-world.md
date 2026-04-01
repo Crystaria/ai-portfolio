@@ -3,6 +3,13 @@ layout: page
 title: MCP Hello World
 ---
 
+<script setup>
+import projectsData from '../.vitepress/_data/downloads.json'
+
+const project = projectsData['mcp-hello-world']
+const downloadsText = project.downloads || 0
+</script>
+
 <div class="project-detail">
 
 # MCP Hello World
@@ -19,8 +26,8 @@ Minimal MCP server example - the "Hello World" of MCP development.
 
 | Metric | Value |
 |--------|-------|
-| Downloads | Available on ClawHub |
-| Last Updated | 2026-04-01 |
+| Downloads | {{ downloadsText }} |
+| Last Updated | {{ project.lastUpdated }} |
 | Status | <span class="status-published">Published</span> |
 
 </div>

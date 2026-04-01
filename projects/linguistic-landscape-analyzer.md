@@ -3,6 +3,13 @@ layout: page
 title: Linguistic Landscape Analyzer
 ---
 
+<script setup>
+import projectsData from '../.vitepress/_data/downloads.json'
+
+const project = projectsData['linguistic-landscape-analyzer']
+const downloadsText = project.downloads || 0
+</script>
+
 <div class="project-detail">
 
 # Linguistic Landscape Analyzer
@@ -19,8 +26,8 @@ MCP tool for linguistic landscape analysis - sentiment analysis, keyword extract
 
 | Metric | Value |
 |--------|-------|
-| Downloads | Available on ClawHub |
-| Last Updated | 2026-04-01 |
+| Downloads | {{ downloadsText }} |
+| Last Updated | {{ project.lastUpdated }} |
 | Status | <span class="status-published">Published</span> |
 
 </div>

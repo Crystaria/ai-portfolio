@@ -3,6 +3,13 @@ layout: page
 title: Memory Boost
 ---
 
+<script setup>
+import projectsData from '../.vitepress/_data/downloads.json'
+
+const project = projectsData['memory-boost']
+const downloadsText = project.downloads || 0
+</script>
+
 <div class="project-detail">
 
 # Memory Boost
@@ -19,8 +26,8 @@ Simple text-based memory system for AI assistants - never lose context again.
 
 | Metric | Value |
 |--------|-------|
-| Downloads | Available on ClawHub |
-| Last Updated | 2026-04-01 |
+| Downloads | {{ downloadsText }} |
+| Last Updated | {{ project.lastUpdated }} |
 | Status | <span class="status-published">Published</span> |
 
 </div>
