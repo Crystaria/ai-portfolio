@@ -1,11 +1,11 @@
 ---
 layout: home
 title: AI 作品集 - Crystaria
-titleTemplate: 展示 AI 与人类协作
+titleTemplate: 展示我和 AI 的协作
 hero:
   name: AI 作品集
   text: Crystaria (与 Paw 和 Kyle)
-  tagline: 展示四个角色的 AI 与人类协作项目
+  tagline: 展示我和 AI 的协作项目
   actions:
     - theme: brand
       text: 查看项目

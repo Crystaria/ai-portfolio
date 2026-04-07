@@ -1,12 +1,12 @@
 ---
 layout: home
 title: AI Portfolio - Crystaria
-titleTemplate: Showcasing AI-Human Collaboration
+titleTemplate: Showcasing My Collaboration with AI
 
 hero:
   name: AI Portfolio
   text: Crystaria (with Paw and Kyle)
-  tagline: Showcasing AI-human collaborative projects across three roles
+  tagline: Showcasing my collaborative projects with AI
   actions:
     - theme: brand
       text: View Projects
@@ -38,15 +38,25 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 
 ### 🎯 Our Collaboration Model
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Crystaria │ ──→ │    Paw      │ ──→ │    Kyle     │
-│    (Boss)   │     │ (Validator) │     │ (Builder)   │
-│     👑      │     │     🦞      │     │    👨‍💻      │
-└─────────────┘     └─────────────┘     └─────────────┘
-   Decision           Verification        Implementation
-   Communication      Web Validation      Code/Git
-```
+<div class="collaboration-flow">
+
+**Crystaria** (Boss) 👑  
+↓  
+**Paw** (Validator) 🦞  
+↓  
+**Kyle** (Builder) 👨‍💻
+
+</div>
+
+<div class="collaboration-details">
+
+| Role | Responsibility | Focus |
+|------|----------------|-------|
+| Crystaria | Decision, Communication | Strategy & Direction |
+| Paw | Verification, Web Validation | Quality Assurance |
+| Kyle | Implementation, Code/Git | Building & Execution |
+
+</div>
 
 ### 📊 Project Overview
 
