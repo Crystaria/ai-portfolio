@@ -298,3 +298,25 @@ html[class*='dark'] {
   background-color: var(--vp-c-bg) !important;
   border-bottom-color: var(--vp-c-border) !important;
 }
+
+/* === 去掉区域分割线 === */
+/* 去掉内容区域之间的顶部分隔线 */
+.VPHome .container,
+.VPHome .hero,
+.VPHome .features,
+.VPPage .container {
+  border-top: none !important;
+}
+
+/* 去掉水平分割线 hr */
+hr {
+  border: none !important;
+  border-top: none !important;
+  margin: 0 !important;
+}
+
+/* 去掉内容块之间的分隔线 */
+.content-container,
+.content-container > div {
+  border-top: none !important;
+}
