@@ -10,8 +10,8 @@
     "descriptionZh": "基于文本的 AI 助手记忆系统 - 不再丢失上下文",
     "clawhubUrl": "https://clawhub.ai/Crystaria/memory-boost",
     "githubUrl": null,
-    "downloads": 226,
-    "lastUpdated": "2026-04-01",
+    "downloads": 116,
+    "lastUpdated": "2026-04-07",
     "status": "published"
   },
   "mcp-hello-world": {
@@ -25,8 +25,8 @@
     "descriptionZh": "最小化 MCP 服务器示例 - add 和 hello_world 工具",
     "clawhubUrl": "https://clawhub.ai/Crystaria/mcp-hello-world",
     "githubUrl": null,
-    "downloads": 89,
-    "lastUpdated": "2026-04-01",
+    "downloads": 107,
+    "lastUpdated": "2026-04-07",
     "status": "published"
   },
   "chinese-daily-report-generator": {
@@ -40,8 +40,8 @@
     "descriptionZh": "面向专业人士的自动化日报/周报生成器",
     "clawhubUrl": "https://clawhub.ai/Crystaria/chinese-daily-report-generator",
     "githubUrl": null,
-    "downloads": 320,
-    "lastUpdated": "2026-04-01",
+    "downloads": 387,
+    "lastUpdated": "2026-04-07",
     "status": "published"
   },
   "safe-skill-advisor": {
@@ -55,8 +55,8 @@
     "descriptionZh": "MCP 技能开发的安全顾问",
     "clawhubUrl": "https://clawhub.ai/Crystaria/safe-skill-advisor",
     "githubUrl": null,
-    "downloads": 128,
-    "lastUpdated": "2026-04-01",
+    "downloads": 305,
+    "lastUpdated": "2026-04-07",
     "status": "published"
   },
   "linguistic-landscape-analyzer": {
@@ -70,8 +70,8 @@
     "descriptionZh": "语言景观分析 MCP 工具 - 情感分析、关键词提取、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/linguistic-landscape-analyzer",
     "githubUrl": null,
-    "downloads": 198,
-    "lastUpdated": "2026-04-01",
+    "downloads": 125,
+    "lastUpdated": "2026-04-07",
     "status": "published"
   },
   "social-media-monitor": {
@@ -85,8 +85,8 @@
     "descriptionZh": "社交媒体情感分析 - 负面预警、音量趋势、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/social-media-monitor",
     "githubUrl": null,
-    "downloads": 145,
-    "lastUpdated": "2026-04-01",
+    "downloads": 138,
+    "lastUpdated": "2026-04-07",
     "status": "published"
   },
   "sillytavern-message-collapser": {
