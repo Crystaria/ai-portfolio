@@ -81,8 +81,8 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
     <span class="project-badge">Full-Stack</span>
   </div>
   <p class="project-desc">
-    A full-stack language learning and analysis platform built with 
-    React, deployed on Vercel + Railway with backend API.
+    A full-stack language learning and analysis platform built with React
+    and Node.js.
   </p>
   <div class="project-tech">
     <span class="tech-tag">React</span>
@@ -91,9 +91,6 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
     <span class="tech-tag">Railway</span>
   </div>
   <div class="project-links">
-    <a href="https://frontend-two-alpha-40.vercel.app" target="_blank" class="project-link primary">
-      🔗 Live Demo
-    </a>
     <a href="https://github.com/Crystaria/linguamate-pro" target="_blank" class="project-link">
       📂 GitHub
     </a>
