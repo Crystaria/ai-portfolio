@@ -48,28 +48,15 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
    Communication      Web Validation      Code/Git
 ```
 
-### 📊 Project Overview
-
-<div class="project-stats">
-
-| Role | Projects | Published | In Progress |
-|------|----------|-----------|-------------|
-| Application Builder | 6 | ✅ 6 | - |
-| Community Contributor | 1 | ✅ 1 | - |
-| Experience Optimizer | 1 | ✅ 1 | - |
-| **Total** | **8** | **✅ 8** | **-** |
-
-</div>
-
 ### 📈 Skills & Downloads
 
-<div class="skills-table-container" v-if="typeof window !== 'undefined'">
+<div class="skills-table-container">
   <div class="total-stats">
     <span class="stat-label">Total Downloads:</span>
-    <span class="stat-value">{{ totalDownloads.toLocaleString() }}</span>
+    <span class="stat-value">1,078</span>
     <span class="stat-divider">|</span>
     <span class="stat-label">Skills:</span>
-    <span class="stat-value">{{ skillsList.length }}</span>
+    <span class="stat-value">6</span>
   </div>
 
   <table class="skills-table">
@@ -81,18 +68,75 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
       </tr>
     </thead>
     <tbody>
-      <tr v-for="skill in skillsList" :key="skill.slug">
+      <tr>
         <td class="skill-name">
           <span class="skill-icon">🛠️</span>
-          {{ skill.name }}
+          Chinese Daily Report Generator
         </td>
-        <td class="downloads-count">{{ skill.downloads.toLocaleString() }}</td>
+        <td class="downloads-count">387</td>
         <td class="skill-links">
-          <a v-if="skill.clawhubUrl" :href="skill.clawhubUrl" target="_blank" class="link-btn clawhub">
+          <a href="https://clawhub.ai/Crystaria/chinese-daily-report-generator" target="_blank" class="link-btn clawhub">
             🦞 ClawHub
           </a>
-          <a v-if="skill.githubUrl" :href="skill.githubUrl" target="_blank" class="link-btn github">
-            📂 GitHub
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-name">
+          <span class="skill-icon">🛠️</span>
+          Safe Skill Advisor
+        </td>
+        <td class="downloads-count">305</td>
+        <td class="skill-links">
+          <a href="https://clawhub.ai/Crystaria/safe-skill-advisor" target="_blank" class="link-btn clawhub">
+            🦞 ClawHub
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-name">
+          <span class="skill-icon">🛠️</span>
+          Social Media Monitor
+        </td>
+        <td class="downloads-count">138</td>
+        <td class="skill-links">
+          <a href="https://clawhub.ai/Crystaria/social-media-monitor" target="_blank" class="link-btn clawhub">
+            🦞 ClawHub
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-name">
+          <span class="skill-icon">🛠️</span>
+          Linguistic Landscape Analyzer
+        </td>
+        <td class="downloads-count">125</td>
+        <td class="skill-links">
+          <a href="https://clawhub.ai/Crystaria/linguistic-landscape-analyzer" target="_blank" class="link-btn clawhub">
+            🦞 ClawHub
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-name">
+          <span class="skill-icon">🛠️</span>
+          Memory Boost
+        </td>
+        <td class="downloads-count">116</td>
+        <td class="skill-links">
+          <a href="https://clawhub.ai/Crystaria/memory-boost" target="_blank" class="link-btn clawhub">
+            🦞 ClawHub
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-name">
+          <span class="skill-icon">🛠️</span>
+          MCP Hello World
+        </td>
+        <td class="downloads-count">107</td>
+        <td class="skill-links">
+          <a href="https://clawhub.ai/Crystaria/mcp-hello-world" target="_blank" class="link-btn clawhub">
+            🦞 ClawHub
           </a>
         </td>
       </tr>
@@ -107,23 +151,9 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 
 ---
 
-*Last updated: April 1, 2026*
+*Last updated: April 7, 2026*
 
 </div>
-
-<script setup>
-import { ref, computed } from 'vue'
-import downloads from './.vitepress/_data/downloads.json'
-
-const skillsList = computed(() => {
-  const skills = Object.values(downloads).filter(s => s.role === 'builder')
-  return skills.sort((a, b) => b.downloads - a.downloads)
-})
-
-const totalDownloads = computed(() => {
-  return skillsList.value.reduce((sum, skill) => sum + skill.downloads, 0)
-})
-</script>
 
 <style>
 .portfolio-home {
