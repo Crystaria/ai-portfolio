@@ -12,7 +12,8 @@
     "githubUrl": null,
     "downloads": 116,
     "lastUpdated": "2026-04-07",
-    "status": "published"
+    "status": "published",
+    "version": "1.1.1"
   },
   "mcp-hello-world": {
     "name": "MCP Hello World",
@@ -25,9 +26,10 @@
     "descriptionZh": "最小化 MCP 服务器示例 - add 和 hello_world 工具",
     "clawhubUrl": "https://clawhub.ai/Crystaria/mcp-hello-world",
     "githubUrl": null,
-    "downloads": 107,
+    "downloads": 109,
     "lastUpdated": "2026-04-07",
-    "status": "published"
+    "status": "published",
+    "version": "1.0.2"
   },
   "chinese-daily-report-generator": {
     "name": "Chinese Daily Report Generator",
@@ -40,9 +42,10 @@
     "descriptionZh": "面向专业人士的自动化日报/周报生成器",
     "clawhubUrl": "https://clawhub.ai/Crystaria/chinese-daily-report-generator",
     "githubUrl": null,
-    "downloads": 387,
+    "downloads": 392,
     "lastUpdated": "2026-04-07",
-    "status": "published"
+    "status": "published",
+    "version": "1.2.1"
   },
   "safe-skill-advisor": {
     "name": "Safe Skill Advisor",
@@ -55,9 +58,10 @@
     "descriptionZh": "MCP 技能开发的安全顾问",
     "clawhubUrl": "https://clawhub.ai/Crystaria/safe-skill-advisor",
     "githubUrl": null,
-    "downloads": 305,
+    "downloads": 308,
     "lastUpdated": "2026-04-07",
-    "status": "published"
+    "status": "published",
+    "version": "1.7.0"
   },
   "linguistic-landscape-analyzer": {
     "name": "Linguistic Landscape Analyzer",
@@ -70,9 +74,10 @@
     "descriptionZh": "语言景观分析 MCP 工具 - 情感分析、关键词提取、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/linguistic-landscape-analyzer",
     "githubUrl": null,
-    "downloads": 125,
+    "downloads": 126,
     "lastUpdated": "2026-04-07",
-    "status": "published"
+    "status": "published",
+    "version": "1.0.1"
   },
   "social-media-monitor": {
     "name": "Social Media Monitor",
@@ -85,9 +90,10 @@
     "descriptionZh": "社交媒体情感分析 - 负面预警、音量趋势、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/social-media-monitor",
     "githubUrl": null,
-    "downloads": 138,
+    "downloads": 139,
     "lastUpdated": "2026-04-07",
-    "status": "published"
+    "status": "published",
+    "version": "1.0.0"
   },
   "sillytavern-message-collapser": {
     "name": "SillyTavern Message Collapser",
