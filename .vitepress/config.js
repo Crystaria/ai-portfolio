@@ -7,6 +7,9 @@ export default defineConfig({
 
   head: [],
 
+  // Copy static files from public directory
+  publicDir: 'public',
+
   locales: {
     root: {
       label: 'English',

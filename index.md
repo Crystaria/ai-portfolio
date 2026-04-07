@@ -77,7 +77,7 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  fetch('/.vitepress/_data/downloads.json')
+  fetch('/_data/downloads.json')
     .then(res => res.json())
     .then(data => {
       const skills = Object.values(data).filter(s => s.role === 'builder')
