@@ -53,10 +53,10 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 <div class="skills-table-container">
   <div class="total-stats">
     <span class="stat-label">Total Downloads:</span>
-    <span class="stat-value">1,078</span>
+    <span class="stat-value" id="total-downloads">Loading...</span>
     <span class="stat-divider">|</span>
     <span class="stat-label">Skills:</span>
-    <span class="stat-value">6</span>
+    <span class="stat-value" id="skills-count">-</span>
   </div>
 
   <table class="skills-table">
@@ -67,82 +67,61 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
         <th>Link</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td class="skill-name">
-          <span class="skill-icon">🛠️</span>
-          Chinese Daily Report Generator
-        </td>
-        <td class="downloads-count">387</td>
-        <td class="skill-links">
-          <a href="https://clawhub.ai/Crystaria/chinese-daily-report-generator" target="_blank" class="link-btn clawhub">
-            🦞 ClawHub
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-name">
-          <span class="skill-icon">🛠️</span>
-          Safe Skill Advisor
-        </td>
-        <td class="downloads-count">305</td>
-        <td class="skill-links">
-          <a href="https://clawhub.ai/Crystaria/safe-skill-advisor" target="_blank" class="link-btn clawhub">
-            🦞 ClawHub
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-name">
-          <span class="skill-icon">🛠️</span>
-          Social Media Monitor
-        </td>
-        <td class="downloads-count">138</td>
-        <td class="skill-links">
-          <a href="https://clawhub.ai/Crystaria/social-media-monitor" target="_blank" class="link-btn clawhub">
-            🦞 ClawHub
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-name">
-          <span class="skill-icon">🛠️</span>
-          Linguistic Landscape Analyzer
-        </td>
-        <td class="downloads-count">125</td>
-        <td class="skill-links">
-          <a href="https://clawhub.ai/Crystaria/linguistic-landscape-analyzer" target="_blank" class="link-btn clawhub">
-            🦞 ClawHub
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-name">
-          <span class="skill-icon">🛠️</span>
-          Memory Boost
-        </td>
-        <td class="downloads-count">116</td>
-        <td class="skill-links">
-          <a href="https://clawhub.ai/Crystaria/memory-boost" target="_blank" class="link-btn clawhub">
-            🦞 ClawHub
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-name">
-          <span class="skill-icon">🛠️</span>
-          MCP Hello World
-        </td>
-        <td class="downloads-count">107</td>
-        <td class="skill-links">
-          <a href="https://clawhub.ai/Crystaria/mcp-hello-world" target="_blank" class="link-btn clawhub">
-            🦞 ClawHub
-          </a>
-        </td>
-      </tr>
+    <tbody id="skills-tbody">
+      <tr><td colspan="3" style="text-align:center;padding:2rem;">Loading data...</td></tr>
     </tbody>
   </table>
 </div>
+
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  fetch('/.vitepress/_data/downloads.json')
+    .then(res => res.json())
+    .then(data => {
+      const skills = Object.values(data).filter(s => s.role === 'builder')
+      skills.sort((a, b) => b.downloads - a.downloads)
+      
+      // Update stats
+      const total = skills.reduce((sum, s) => sum + (s.downloads || 0), 0)
+      const totalEl = document.getElementById('total-downloads')
+      const countEl = document.getElementById('skills-count')
+      if (totalEl) totalEl.textContent = total.toLocaleString()
+      if (countEl) countEl.textContent = skills.length
+      
+      // Build table
+      const tbody = document.getElementById('skills-tbody')
+      if (!tbody) return
+      
+      tbody.innerHTML = skills.map(skill => {
+        const clawhubLink = skill.clawhubUrl 
+          ? `<a href="${skill.clawhubUrl}" target="_blank" class="link-btn clawhub">🦞 ClawHub</a>` 
+          : ''
+        const githubLink = skill.githubUrl 
+          ? `<a href="${skill.githubUrl}" target="_blank" class="link-btn github">📂 GitHub</a>` 
+          : ''
+        return `
+          <tr>
+            <td class="skill-name">
+              <span class="skill-icon">🛠️</span>
+              ${skill.name}
+            </td>
+            <td class="downloads-count">${(skill.downloads || 0).toLocaleString()}</td>
+            <td class="skill-links">${clawhubLink}${githubLink}</td>
+          </tr>
+        `
+      }).join('')
+    })
+    .catch(err => {
+      console.error('Failed to load skills data:', err)
+      const tbody = document.getElementById('skills-tbody')
+      if (tbody) {
+        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:2rem;color:var(--vp-c-warning);">Failed to load data</td></tr>'
+      }
+    })
+})
+</script>
 
 ### 🚀 Quick Links
 
