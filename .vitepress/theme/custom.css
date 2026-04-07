@@ -317,3 +317,22 @@ hr {
 .content-container > div {
   border-top: none !important;
 }
+
+/* Collaboration Flow Styles */
+.collaboration-flow {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: var(--vp-radius-medium);
+  padding: var(--vp-space-4);
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.collaboration-flow p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.collaboration-details {
+  margin: 1.5rem 0;
+}
