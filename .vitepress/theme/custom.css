@@ -84,7 +84,6 @@ body {
 
 .VPNavBar {
   background-color: var(--vp-c-bg);
-  border-bottom: 1px solid var(--vp-c-border);
 }
 
 .VPSidebar {
@@ -239,7 +238,6 @@ th, td {
 
 /* Footer */
 .VPFooter {
-  border-top: 1px solid var(--vp-c-border);
   background-color: var(--vp-c-bg);
 }
 
@@ -296,7 +294,6 @@ html[class*='dark'] {
 .VPNavBar:not(.top),
 .VPLocalNav {
   background-color: var(--vp-c-bg) !important;
-  border-bottom-color: var(--vp-c-border) !important;
 }
 
 /* === 去掉区域分割线 === */
