@@ -91,6 +91,9 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
     <span class="tech-tag">Railway</span>
   </div>
   <div class="project-links">
+    <a href="https://linguamate-pro.vercel.app" target="_blank" class="project-link primary">
+      🔗 Live Demo
+    </a>
     <a href="https://github.com/Crystaria/linguamate-pro" target="_blank" class="project-link">
       📂 GitHub
     </a>

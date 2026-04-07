@@ -89,6 +89,9 @@ features:
     <span class="tech-tag">Railway</span>
   </div>
   <div class="project-links">
+    <a href="https://linguamate-pro.vercel.app" target="_blank" class="project-link primary">
+      🔗 在线体验
+    </a>
     <a href="https://github.com/Crystaria/linguamate-pro" target="_blank" class="project-link">
       📂 GitHub
     </a>
