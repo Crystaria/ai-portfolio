@@ -48,6 +48,29 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
    Communication      Web Validation      Code/Git
 ```
 
+### 🌟 Featured Achievement
+
+<div class="featured-achievement">
+  <div class="achievement-header">
+    <span class="achievement-icon">🎉</span>
+    <h3>SillyTavern Message Collapser</h3>
+    <span class="achievement-badge">✅ Merged</span>
+  </div>
+  <p class="achievement-desc">
+    Your extension has been successfully merged into the official 
+    <strong>SillyTavern-Content</strong> repository (PR #43), becoming part of 
+    the global SillyTavern ecosystem used by thousands of users worldwide.
+  </p>
+  <div class="achievement-links">
+    <a href="https://github.com/Crystaria/SillyTavern-MessageCollapser" target="_blank" class="achievement-link">
+      📂 View Extension
+    </a>
+    <a href="https://github.com/SillyTavern/SillyTavern-Content/pull/43" target="_blank" class="achievement-link">
+      🔗 View PR #43
+    </a>
+  </div>
+</div>
+
 ### 📈 Skills & Downloads
 
 <div class="skills-table-container">
@@ -123,11 +146,6 @@ onMounted(() => {
 })
 </script>
 
-### 🚀 Quick Links
-
-- **ClawHub Skills**: [Browse on ClawHub](https://clawhub.ai/Crystaria)
-- **GitHub**: [github.com/Crystaria](https://github.com/Crystaria)
-
 ---
 
 *Last updated: April 7, 2026*
@@ -175,6 +193,74 @@ onMounted(() => {
   font-weight: 500;
 }
 
+/* Featured Achievement */
+.featured-achievement {
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(130, 80, 226, 0.1) 100%);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: var(--vp-radius-medium);
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-icon {
+  font-size: 2rem;
+}
+
+.achievement-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--vp-c-text);
+}
+
+.achievement-badge {
+  background-color: rgba(63, 185, 80, 0.15);
+  border: 1px solid var(--vp-c-success);
+  color: var(--vp-c-success);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.achievement-desc {
+  color: var(--vp-c-text-mute);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.achievement-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.achievement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  background-color: rgba(88, 166, 255, 0.1);
+  border: 1px solid var(--vp-c-brand);
+  border-radius: var(--vp-radius-small);
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.achievement-link:hover {
+  background-color: rgba(88, 166, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Skills Table */
 .skills-table-container {
   background-color: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-border);
@@ -301,6 +387,14 @@ onMounted(() => {
   .total-stats {
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+  
+  .achievement-header {
+    flex-wrap: wrap;
+  }
+  
+  .achievement-links {
+    flex-direction: column;
   }
 }
 </style>
