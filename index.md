@@ -48,6 +48,19 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
    Communication      Web Validation      Code/Git
 ```
 
+### 📊 Project Overview
+
+<div class="project-stats">
+
+| Role | Projects | Published | In Progress |
+|------|----------|-----------|-------------|
+| Application Builder | 6 | ✅ 6 | - |
+| Community Contributor | 1 | ✅ 1 | - |
+| Experience Optimizer | 1 | ✅ 1 | - |
+| **Total** | **8** | **✅ 8** | **-** |
+
+</div>
+
 ### 🌟 Featured Achievement
 
 <div class="featured-achievement">
