@@ -80,8 +80,7 @@ features:
     <span class="project-badge">全栈应用</span>
   </div>
   <p class="project-desc">
-    基于 React 的全栈语言学习与分析平台，
-    前端部署于 Vercel，后端 API 部署于 Railway。
+    基于 React 和 Node.js 构建的全栈语言学习与分析平台。
   </p>
   <div class="project-tech">
     <span class="tech-tag">React</span>
@@ -90,9 +89,6 @@ features:
     <span class="tech-tag">Railway</span>
   </div>
   <div class="project-links">
-    <a href="https://frontend-two-alpha-40.vercel.app" target="_blank" class="project-link primary">
-      🔗 在线体验
-    </a>
     <a href="https://github.com/Crystaria/linguamate-pro" target="_blank" class="project-link">
       📂 GitHub
     </a>
