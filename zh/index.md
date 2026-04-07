@@ -61,13 +61,42 @@ features:
 
 <div class="project-stats">
 
-| 角色 | 项目数 | 已发布 | 进行中 |
-|------|--------|--------|--------|
-| 应用开发者 | 6 | ✅ 6 | - |
-| 社区贡献者 | 1 | ✅ 1 | - |
-| 体验优化师 | 1 | ✅ 1 | - |
-| **总计** | **8** | **✅ 8** | **-** |
+| 类别 | 项目数 | 说明 |
+|------|--------|------|
+| 🚀 独立应用 | 1 | 全栈应用，可在线体验 |
+| 🤖 ClawHub 技能 | 6 | 发布在 ClawHub 的 MCP 工具 |
+| 🤝 社区贡献 | 1 | 开源项目贡献 |
+| ✨ 体验优化 | 1 | 工具/脚本优化 |
+| **总计** | **9** | |
 
+</div>
+
+### 🏆 精选项目
+
+<div class="featured-project-card">
+  <div class="project-header">
+    <span class="project-icon">🚀</span>
+    <h3>LinguaMate Pro</h3>
+    <span class="project-badge">全栈应用</span>
+  </div>
+  <p class="project-desc">
+    基于 React 的全栈语言学习与分析平台，
+    前端部署于 Vercel，后端 API 部署于 Railway。
+  </p>
+  <div class="project-tech">
+    <span class="tech-tag">React</span>
+    <span class="tech-tag">Node.js</span>
+    <span class="tech-tag">Vercel</span>
+    <span class="tech-tag">Railway</span>
+  </div>
+  <div class="project-links">
+    <a href="https://frontend-two-alpha-40.vercel.app" target="_blank" class="project-link primary">
+      🔗 在线体验
+    </a>
+    <a href="https://github.com/Crystaria/linguamate-pro" target="_blank" class="project-link">
+      📂 GitHub
+    </a>
+  </div>
 </div>
 
 ### 🌟 亮点成就

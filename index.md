@@ -62,13 +62,42 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 
 <div class="project-stats">
 
-| Role | Projects | Published | In Progress |
-|------|----------|-----------|-------------|
-| Application Builder | 6 | ✅ 6 | - |
-| Community Contributor | 1 | ✅ 1 | - |
-| Experience Optimizer | 1 | ✅ 1 | - |
-| **Total** | **8** | **✅ 8** | **-** |
+| Category | Projects | Description |
+|----------|----------|-------------|
+| 🚀 Independent Apps | 1 | Full-stack applications with live demos |
+| 🤖 ClawHub Skills | 6 | MCP tools published on ClawHub |
+| 🤝 Community Contributions | 1 | Open-source project contributions |
+| ✨ Experience Optimizers | 1 | Tools and scripts for better UX |
+| **Total** | **9** | |
 
+</div>
+
+### 🏆 Featured Project
+
+<div class="featured-project-card">
+  <div class="project-header">
+    <span class="project-icon">🚀</span>
+    <h3>LinguaMate Pro</h3>
+    <span class="project-badge">Full-Stack</span>
+  </div>
+  <p class="project-desc">
+    A full-stack language learning and analysis platform built with 
+    React, deployed on Vercel + Railway with backend API.
+  </p>
+  <div class="project-tech">
+    <span class="tech-tag">React</span>
+    <span class="tech-tag">Node.js</span>
+    <span class="tech-tag">Vercel</span>
+    <span class="tech-tag">Railway</span>
+  </div>
+  <div class="project-links">
+    <a href="https://frontend-two-alpha-40.vercel.app" target="_blank" class="project-link primary">
+      🔗 Live Demo
+    </a>
+    <a href="https://github.com/Crystaria/linguamate-pro" target="_blank" class="project-link">
+      📂 GitHub
+    </a>
+  </div>
 </div>
 
 ### 🌟 Featured Achievement
