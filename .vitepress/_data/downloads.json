@@ -42,8 +42,8 @@
     "descriptionZh": "面向专业人士的自动化日报/周报生成器",
     "clawhubUrl": "https://clawhub.ai/Crystaria/chinese-daily-report-generator",
     "githubUrl": null,
-    "downloads": 461,
-    "lastUpdated": "2026-04-11",
+    "downloads": 466,
+    "lastUpdated": "2026-04-12",
     "status": "published",
     "version": "1.2.1"
   },
@@ -74,8 +74,8 @@
     "descriptionZh": "语言景观分析 MCP 工具 - 情感分析、关键词提取、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/linguistic-landscape-analyzer",
     "githubUrl": null,
-    "downloads": 153,
-    "lastUpdated": "2026-04-11",
+    "downloads": 154,
+    "lastUpdated": "2026-04-12",
     "status": "published",
     "version": "1.0.1"
   },
