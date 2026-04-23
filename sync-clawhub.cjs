@@ -24,7 +24,8 @@ const CONFIG = {
   dataFile: path.join(__dirname, '.vitepress/_data/downloads.json'),
   logFile: path.join(__dirname, 'sync-clawhub.log'),
   gitEmail: 'github-actions[bot]@users.noreply.github.com',
-  gitName: 'GitHub Actions Bot'
+  gitName: 'GitHub Actions Bot',
+  requestTimeout: 30000 // 30 秒超时
 };
 
 // 技能列表
@@ -45,22 +46,41 @@ function log(message) {
   fs.appendFileSync(CONFIG.logFile, logLine + '\n');
 }
 
-// 获取 ClawHub 页面数据
+// 延迟函数
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// 获取 ClawHub 页面数据（使用 Promise.race 实现真正的超时控制）
 function fetchClawHubData(slug) {
   return new Promise((resolve) => {
     const url = `https://clawhub.ai/crystaria/${slug}`;
     log(`Fetching: ${url}`);
 
+    let settled = false;
+    function settle(result) {
+      if (settled) return;
+      settled = true;
+      resolve(result);
+    }
+
+    // 超时控制
+    const timer = setTimeout(() => {
+      log(`Timeout for ${slug}`);
+      if (req) req.destroy();
+      settle(null);
+    }, CONFIG.requestTimeout);
+
     const req = https.get(url, {
-      timeout: 10000,
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ClawHubSync/1.0)' }
     }, (res) => {
       let data = '';
       res.on('data', (chunk) => data += chunk);
       res.on('end', () => {
+        clearTimeout(timer);
         if (res.statusCode !== 200) {
           log(`Error: Status ${res.statusCode} for ${slug}`);
-          resolve(null);
+          settle(null);
           return;
         }
 
@@ -75,19 +95,14 @@ function fetchClawHubData(slug) {
         };
 
         log(`  -> downloads: ${result.downloads}, version: ${result.version}`);
-        resolve(result);
+        settle(result);
       });
     });
 
     req.on('error', (e) => {
+      clearTimeout(timer);
       log(`Request error for ${slug}: ${e.message}`);
-      resolve(null);
-    });
-
-    req.on('timeout', () => {
-      log(`Timeout for ${slug}`);
-      req.destroy();
-      resolve(null);
+      settle(null);
     });
   });
 }
@@ -158,7 +173,10 @@ async function main() {
   const changes = [];
   let hasChanges = false;
 
-  for (const skill of SKILLS) {
+  for (let i = 0; i < SKILLS.length; i++) {
+    if (i > 0) await delay(2000); // 请求间延迟 2 秒，避免触发速率限制
+
+    const skill = SKILLS[i];
     const fetched = await fetchClawHubData(skill.slug);
     if (!fetched) continue;
 
