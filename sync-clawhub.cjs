@@ -10,7 +10,7 @@
  * 5. 生成同步日志
  *
  * 配置：crontab -e
- * 添加：0 0 * * * /home/admin/.openclaw/workspace/ai-portfolio/sync-clawhub.js >> /home/admin/.openclaw/workspace/ai-portfolio/sync-clawhub.log 2>&1
+ * 添加：0 0 * * * /home/admin/.openclaw/workspace/ai-portfolio/sync-clawhub.cjs >> /home/admin/.openclaw/workspace/ai-portfolio/sync-clawhub.log 2>&1
  */
 
 const https = require('https');
