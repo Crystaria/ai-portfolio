@@ -84,10 +84,10 @@ function fetchClawHubData(slug) {
           return;
         }
 
-        // 提取下载量
-        const dlMatch = data.match(/downloads[^\d]{0,20}(\d{1,4})/i);
-        // 提取版本
-        const vMatch = data.match(/version[^\w]{0,5}"([^"]+)"/i);
+        // 提取下载量 - 匹配 meta-stat-value span
+        const dlMatch = data.match(/meta-stat-value[^>]*>(\d+)/);
+        // 提取版本 - 从 og:image URL 的 version 参数
+        const vMatch = data.match(/og:image.*version=([^&"'>]+)/);
 
         const result = {
           downloads: dlMatch ? parseInt(dlMatch[1], 10) : null,
