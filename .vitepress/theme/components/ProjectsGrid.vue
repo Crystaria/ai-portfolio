@@ -4,7 +4,7 @@
     <p class="explore-text">{{ t('explore') }}</p>
 
     <div v-for="(role, key) in roles" :key="key" class="role-section" :id="role.anchor">
-      <h2>{{ role.icon }} {{ lang === 'zh' ? role.labelZh : role.label }}</h2>
+      <h2>{{ role.icon }} {{ isZh ? role.labelZh : role.label }}</h2>
 
       <div class="project-grid">
         <div v-for="project in groupedProjects[key]" :key="project.slug" class="project-card">
@@ -41,52 +41,47 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue'
+import { useData } from 'vitepress'
 import projectsData from '../../_data/downloads.json'
 
-export default {
-  data() {
-    return {
-      lang: 'en',
-      roles: {
-        builder: { label: 'Application Builder', labelZh: '应用开发者', icon: '🛠️', anchor: 'builder' },
-        contributor: { label: 'Community Contributor', labelZh: '社区贡献者', icon: '🤝', anchor: 'contributor' },
-        optimizer: { label: 'Experience Optimizer', labelZh: '体验优化师', icon: '✨', anchor: 'optimizer' }
-      }
-    }
-  },
-  mounted() {
-    this.lang = new URLSearchParams(window.location.search).get('lang') ||
-                (window.location.pathname.startsWith('/zh/') ? 'zh' : 'en')
-  },
-  methods: {
-    t(key, project = null) {
-      const isZh = this.lang === 'zh'
-      if (project && key === 'name') return isZh ? (project.nameZh || project.name) : project.name
-      if (project && key === 'description') return isZh ? (project.descriptionZh || project.description) : project.description
-      if (project && key === 'roleLabel') return isZh ? (project.roleLabelZh || project.roleLabel) : project.roleLabel
-      const translations = {
-        title: { en: 'All Projects', zh: '全部项目' },
-        explore: { en: 'Explore projects by role:', zh: '按角色浏览项目：' },
-        downloads: { en: 'Downloads', zh: '下载量' },
-        published: { en: 'Published', zh: '已发布' },
-        pending: { en: 'Pending', zh: '待发布' },
-        lastUpdated: { en: 'Updated', zh: '更新' },
-        author: { en: 'Crystaria (with Paw and Kyle)', zh: 'Crystaria (与 Paw 和 Kyle)' }
-      }
-      return translations[key]?.[isZh ? 'zh' : 'en'] || key
-    }
-  },
-  computed: {
-    groupedProjects() {
-      return Object.values(projectsData).reduce((acc, p) => {
-        if (!acc[p.role]) acc[p.role] = []
-        acc[p.role].push(p)
-        return acc
-      }, {})
-    }
-  }
+// VitePress resolves `lang` from the active locale and keeps it reactive on
+// navigation, so we no longer guess the language from window.location.
+const { lang } = useData()
+const isZh = computed(() => (lang.value || '').startsWith('zh'))
+
+const roles = {
+  builder: { label: 'Application Builder', labelZh: '应用开发者', icon: '🛠️', anchor: 'builder' },
+  contributor: { label: 'Community Contributor', labelZh: '社区贡献者', icon: '🤝', anchor: 'contributor' },
+  optimizer: { label: 'Experience Optimizer', labelZh: '体验优化师', icon: '✨', anchor: 'optimizer' }
 }
+
+const translations = {
+  title: { en: 'All Projects', zh: '全部项目' },
+  explore: { en: 'Explore projects by role:', zh: '按角色浏览项目：' },
+  downloads: { en: 'Downloads', zh: '下载量' },
+  published: { en: 'Published', zh: '已发布' },
+  pending: { en: 'Pending', zh: '待发布' },
+  lastUpdated: { en: 'Updated', zh: '更新' },
+  author: { en: 'Crystaria (with Paw and Kyle)', zh: 'Crystaria (与 Paw 和 Kyle)' }
+}
+
+function t(key, project = null) {
+  const zh = isZh.value
+  if (project && key === 'name') return zh ? (project.nameZh || project.name) : project.name
+  if (project && key === 'description') return zh ? (project.descriptionZh || project.description) : project.description
+  if (project && key === 'roleLabel') return zh ? (project.roleLabelZh || project.roleLabel) : project.roleLabel
+  return translations[key]?.[zh ? 'zh' : 'en'] || key
+}
+
+const groupedProjects = computed(() =>
+  Object.values(projectsData).reduce((acc, project) => {
+    if (!acc[project.role]) acc[project.role] = []
+    acc[project.role].push(project)
+    return acc
+  }, {})
+)
 </script>
 
 <style scoped>

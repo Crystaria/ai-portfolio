@@ -40,11 +40,12 @@ npm run preview
 ai-portfolio/
 ├── .vitepress/
 │   ├── config.js          # VitePress configuration
+│   ├── _data/
+│   │   └── downloads.json # Project metadata (static data)
 │   └── theme/
 │       ├── index.js       # Theme entry point
-│       └── custom.css     # GitHub Dark Theme
-├── _data/
-│   └── downloads.json     # Project metadata (static data)
+│       ├── components/    # ProjectsGrid.vue
+│       └── styles/        # tokens / base / cards / home / projects CSS
 ├── projects/
 │   ├── index.md           # Projects listing page
 │   ├── memory-boost.md
@@ -53,7 +54,7 @@ ai-portfolio/
 │   ├── safe-skill-advisor.md
 │   ├── linguistic-landscape-analyzer.md
 │   ├── social-media-monitor.md
-│   ├── sillytavern-pr-43.md
+│   ├── sillytavern-message-collapser.md
 │   └── sillytavern-mac-installer.md
 ├── index.md               # Home page
 ├── package.json
@@ -81,7 +82,7 @@ Uses **GitHub Dark Theme** with the following CSS variables:
 
 | Data Type | Source | Update Method |
 |-----------|--------|---------------|
-| Downloads | `_data/downloads.json` | Static (manual update) |
+| Downloads | `.vitepress/_data/downloads.json` | Static (manual update) |
 | Project Info | Frontmatter | Static (manual update) |
 
 **Note:** ClawHub has no public API. Download counts are synced automatically via daily cron job.
@@ -99,7 +100,7 @@ Uses **GitHub Dark Theme** with the following CSS variables:
 
 ## 📝 Adding New Projects
 
-1. Add entry to `_data/downloads.json`
+1. Add entry to `.vitepress/_data/downloads.json`
 2. Create `projects/[slug].md` using template
 3. Update `index.md` stats if needed
 4. Test locally: `npm run dev`

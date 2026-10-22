@@ -38,11 +38,12 @@ npm run preview
 ai-portfolio/
 ├── .vitepress/
 │   ├── config.js          # VitePress 配置
+│   ├── _data/
+│   │   └── downloads.json # 项目元数据
 │   └── theme/
 │       ├── index.js       # 主题入口
-│       └── custom.css     # GitHub 暗色主题样式
-├── _data/
-│   └── downloads.json     # 项目元数据
+│       ├── components/    # ProjectsGrid.vue
+│       └── styles/        # tokens / base / cards / home / projects CSS
 ├── projects/
 │   ├── index.md           # 项目列表页
 │   ├── template.md        # 项目模板
@@ -75,7 +76,7 @@ ai-portfolio/
 
 ### downloads.json
 
-位置：`_data/downloads.json`
+位置：`.vitepress/_data/downloads.json`
 
 包含 8 个项目：
 | 项目 | 角色 | 状态 |
@@ -107,23 +108,24 @@ ai-portfolio/
 - 侧边栏：按角色和项目分类
 - 社交链接：GitHub
 - 页脚：`Crystaria (with Paw and Kyle)`
+- 外观：`appearance: 'force-dark'`（强制暗色，无需客户端脚本）
 
 ### 主题定制
 
-位置：`.vitepress/theme/custom.css`
+位置：`.vitepress/theme/styles/`
 
 包含：
-- GitHub 暗色主题变量
-- 卡片样式
-- 角色标签样式
-- 折叠面板样式
-- 响应式布局
+- `tokens.css`：GitHub 暗色主题变量（颜色 / 间距 / 字体 / 圆角）
+- `base.css`：全局元素样式与 VitePress 布局覆盖
+- `cards.css`：卡片、标签、按钮等共享组件样式
+- `home.css`：首页专属样式
+- `projects.css`：项目详情页专属样式（`/projects/*` 与 `/zh/projects/*` 共用）
 
 ---
 
 ## 📝 添加新项目
 
-1. 在 `_data/downloads.json` 添加条目
+1. 在 `.vitepress/_data/downloads.json` 添加条目
 2. 在 `projects/` 创建 `[slug].md` 文件（参考 template.md）
 3. 更新首页统计数据（如需要）
 4. 本地测试：`npm run dev`

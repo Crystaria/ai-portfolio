@@ -1,9 +1,16 @@
 // .vitepress/config.js
 import { defineConfig } from 'vitepress'
 
+const EDIT_LINK_PATTERN =
+  'https://github.com/Crystaria/ai-portfolio/edit/main/:path'
+
 export default defineConfig({
   title: 'AI Portfolio - Crystaria',
   description: 'Showcasing AI-human collaborative projects',
+
+  // Always render in dark mode. VitePress applies the `dark` class before
+  // paint, so no client-side DOM patching is required.
+  appearance: 'force-dark',
 
   // Phase 0: keep internal docs and temp files out of the build so they are
   // never published as public pages. VitePress already ignores
@@ -34,47 +41,7 @@ export default defineConfig({
       lang: 'en',
       link: '/',
       title: 'AI Portfolio - Crystaria',
-      description: 'Showcasing AI-human collaborative projects',
-      themeConfig: {
-        appearance: false,
-        nav: [
-          { text: 'Home', link: '/' },
-          { text: 'Projects', link: '/projects/' }
-        ],
-        sidebar: {
-          '/projects/': [
-            {
-              text: 'Projects by Role',
-              items: [
-                { text: '🛠️ Application Builder', link: '/projects/#builder' },
-                { text: '🤝 Community Contributor', link: '/projects/#contributor' },
-                { text: '✨ Experience Optimizer', link: '/projects/#optimizer' }
-              ]
-            },
-            {
-              text: 'Individual Projects',
-              items: [
-                { text: 'Memory Boost', link: '/projects/memory-boost' },
-                { text: 'MCP Hello World', link: '/projects/mcp-hello-world' },
-                { text: 'Chinese Daily Report', link: '/projects/chinese-daily-report-generator' },
-                { text: 'Safe Skill Advisor', link: '/projects/safe-skill-advisor' },
-                { text: 'Linguistic Landscape', link: '/projects/linguistic-landscape-analyzer' },
-                { text: 'Social Media Monitor', link: '/projects/social-media-monitor' },
-                { text: 'SillyTavern Message Collapser', link: '/projects/sillytavern-message-collapser' },
-                { text: 'SillyTavern Mac Installer', link: '/projects/sillytavern-mac-installer' }
-              ]
-            }
-          ]
-        },
-        footer: {
-          message: 'Crystaria (with Paw and Kyle)',
-          copyright: 'MIT License'
-        },
-        editLink: {
-          pattern: 'https://github.com/Crystaria/ai-portfolio/edit/main/:path',
-          text: 'Edit this page on GitHub'
-        }
-      }
+      description: 'Showcasing AI-human collaborative projects'
     },
     zh: {
       label: '简体中文',
@@ -83,7 +50,6 @@ export default defineConfig({
       title: 'AI 作品集 - Crystaria',
       description: '展示 AI 与人类协作的项目',
       themeConfig: {
-        appearance: false,
         nav: [
           { text: '首页', link: '/zh/' },
           { text: '项目', link: '/zh/projects/' }
@@ -113,32 +79,22 @@ export default defineConfig({
             }
           ]
         },
-        footer: {
-          message: 'Crystaria (with Paw and Kyle)',
-          copyright: 'MIT License'
-        },
         editLink: {
-          pattern: 'https://github.com/Crystaria/ai-portfolio/edit/main/:path',
+          pattern: EDIT_LINK_PATTERN,
           text: '在 GitHub 上编辑此页面'
         }
       }
     }
   },
 
+  // Shared theme config. English values are the defaults; the `zh` locale
+  // only overrides the strings that need translating.
   themeConfig: {
-    appearance: false,
     logo: '/logo.svg',
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Projects', link: '/projects/' },
-      {
-        text: '🌐 Language',
-        items: [
-          { text: 'English', link: '/' },
-          { text: '简体中文', link: '/zh/' }
-        ]
-      }
+      { text: 'Projects', link: '/projects/' }
     ],
 
     sidebar: {
@@ -161,7 +117,7 @@ export default defineConfig({
             { text: 'Linguistic Landscape', link: '/projects/linguistic-landscape-analyzer' },
             { text: 'Social Media Monitor', link: '/projects/social-media-monitor' },
             { text: 'SillyTavern Message Collapser', link: '/projects/sillytavern-message-collapser' },
-            { text: 'Mac Installer', link: '/projects/sillytavern-mac-installer' }
+            { text: 'SillyTavern Mac Installer', link: '/projects/sillytavern-mac-installer' }
           ]
         }
       ]
@@ -177,13 +133,12 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/Crystaria/ai-portfolio/edit/main/:path',
+      pattern: EDIT_LINK_PATTERN,
       text: 'Edit this page on GitHub'
     }
   },
 
   markdown: {
-    vueComponent: true,
     theme: 'github-dark'
   }
 })

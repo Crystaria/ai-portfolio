@@ -1,0 +1,223 @@
+/* base.css — global element styles and VitePress layout overrides
+ * Loaded after tokens.css, before any page/component stylesheet.
+ */
+
+/* === Force dark theme === */
+html,
+html.light,
+html.dark,
+body {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+
+/* Keep code blocks dark regardless of the host color scheme */
+.shiki, .shiki span,
+pre, code,
+.vp-code, .vp-code span {
+  color-scheme: dark !important;
+}
+
+/* VitePress layout surfaces */
+.VPNavBar,
+.VPSidebar,
+.VPDoc,
+.VPContent,
+.VPLink,
+.VPFeature {
+  background-color: var(--vp-c-bg) !important;
+  color: var(--vp-c-text) !important;
+}
+
+body {
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text);
+  font-family: var(--vp-font-family-base);
+}
+
+.VPHome, .VPPage {
+  background-color: var(--vp-c-bg);
+}
+
+.VPNavBar {
+  background-color: var(--vp-c-bg);
+}
+
+.VPSidebar {
+  background-color: var(--vp-c-bg);
+  border-right: 1px solid var(--vp-c-border);
+}
+
+/* Links */
+a {
+  color: var(--vp-c-brand);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Buttons */
+.VPButton {
+  border-radius: var(--vp-radius-small);
+  font-weight: 500;
+}
+
+.VPButton.brand {
+  background-color: var(--vp-c-brand);
+  border-color: var(--vp-c-brand);
+}
+
+.VPButton.alt {
+  background-color: transparent;
+  border-color: var(--vp-c-border);
+  color: var(--vp-c-text);
+}
+
+.VPButton.alt:hover {
+  border-color: var(--vp-c-text-mute);
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Code Blocks */
+pre, code {
+  font-family: var(--vp-font-family-mono);
+}
+
+pre {
+  background-color: var(--vp-c-bg-mute) !important;
+  border: 1px solid var(--vp-c-border);
+}
+
+/* Tables */
+table {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: var(--vp-radius-medium);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-mute);
+  font-weight: 500;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--vp-c-border-muted);
+  text-align: left;
+}
+
+/* Details / Summary */
+details {
+  background-color: var(--vp-c-bg-mute);
+  border: 1px solid var(--vp-c-border-muted);
+  border-radius: var(--vp-radius-medium);
+  padding: var(--vp-space-3);
+  margin-top: var(--vp-space-3);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--vp-c-text);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+summary:hover {
+  color: var(--vp-c-brand);
+}
+
+details[open] {
+  border-color: var(--vp-c-brand);
+}
+
+/* Hero / Features / Footer */
+.VPHero {
+  color: var(--vp-c-text);
+}
+
+.VPHero h1 {
+  color: var(--vp-c-text);
+}
+
+.VPHero .text {
+  color: var(--vp-c-text-mute);
+}
+
+.VPFeatures {
+  padding: 4rem 0;
+}
+
+.VPFeatures .VPLink:hover {
+  background-color: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-border);
+}
+
+.VPFooter {
+  background-color: var(--vp-c-bg);
+}
+
+/* The appearance switch is hidden anyway; force-dark removes it from the DOM. */
+.VPNavBarAppearance,
+.VPSwitchAppearance,
+.appearance-action {
+  display: none !important;
+}
+
+/* Hard guard against a light flash before hydration */
+html[data-theme='light'],
+html[data-theme='dark'],
+html[class*='light'],
+html[class*='dark'] {
+  background-color: #0d1117 !important;
+}
+
+.VPContent,
+.VPPage,
+.VPDoc,
+.VPDocContainer,
+.VPDocAside,
+.VPDocFooter {
+  background-color: var(--vp-c-bg) !important;
+}
+
+.VPNavBar:not(.top),
+.VPLocalNav {
+  background-color: var(--vp-c-bg) !important;
+}
+
+/* Remove section dividers */
+.VPHome .container,
+.VPHome .hero,
+.VPHome .features,
+.VPPage .container {
+  border-top: none !important;
+}
+
+hr {
+  border: none !important;
+  border-top: none !important;
+  margin: 0 !important;
+}
+
+.content-container,
+.content-container > div {
+  border-top: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .VPSidebar {
+    display: none;
+  }
+
+  .VPNavBar {
+    padding: 0.5rem 1rem;
+  }
+}
