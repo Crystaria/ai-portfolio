@@ -42,7 +42,7 @@
     "descriptionZh": "面向专业人士的自动化日报/周报生成器",
     "clawhubUrl": "https://clawhub.ai/Crystaria/chinese-daily-report-generator",
     "githubUrl": null,
-    "downloads": 2200,
+    "downloads": 2175,
     "lastUpdated": "2026-10-22",
     "status": "published",
     "version": "1.2.1"
@@ -58,7 +58,7 @@
     "descriptionZh": "MCP 技能开发的安全顾问",
     "clawhubUrl": "https://clawhub.ai/Crystaria/safe-skill-advisor",
     "githubUrl": null,
-    "downloads": 1200,
+    "downloads": 1176,
     "lastUpdated": "2026-10-22",
     "status": "published",
     "version": "1.7.0"
@@ -90,7 +90,7 @@
     "descriptionZh": "社交媒体情感分析 - 负面预警、音量趋势、周报生成",
     "clawhubUrl": "https://clawhub.ai/Crystaria/social-media-monitor",
     "githubUrl": null,
-    "downloads": 1100,
+    "downloads": 1076,
     "lastUpdated": "2026-10-22",
     "status": "published",
     "version": "1.0.0"

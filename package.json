@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
-    "build:clean": "rm -rf .vitepress/dist && vitepress build",
+    "build": "node ./scripts/sync-clawhub.js && vitepress build",
+    "build:clean": "rm -rf .vitepress/dist && node ./scripts/sync-clawhub.js && vitepress build",
     "preview": "vitepress preview"
   },
   "keywords": ["portfolio", "ai", "vitepress"],

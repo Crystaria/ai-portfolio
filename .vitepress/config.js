@@ -13,6 +13,10 @@ export default defineConfig({
   // paint, so no client-side DOM patching is required.
   appearance: 'force-dark',
 
+  // Show each page's last Git commit time. The display text and format are
+  // configured under `themeConfig.lastUpdated` below.
+  lastUpdated: true,
+
   // Phase 0: keep internal docs and temp files out of the build so they are
   // never published as public pages. VitePress already ignores
   // "**/node_modules/**" and "**/dist/**" by default.
@@ -136,6 +140,14 @@ export default defineConfig({
     footer: {
       message: 'Crystaria (with Paw and Kyle)',
       copyright: 'MIT License'
+    },
+
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
     },
 
     editLink: {
