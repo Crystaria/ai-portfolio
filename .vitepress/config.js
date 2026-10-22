@@ -4,6 +4,17 @@ import { defineConfig } from 'vitepress'
 const EDIT_LINK_PATTERN =
   'https://github.com/Crystaria/ai-portfolio/edit/main/:path'
 
+// Evaluated when VitePress starts. A production build therefore always shows
+// the date of that build instead of a hand-maintained date in the Markdown.
+const BUILD_DATE = new Date()
+const formatBuildDate = (locale) =>
+  new Intl.DateTimeFormat(locale, {
+    dateStyle: 'long',
+    timeZone: 'Asia/Shanghai'
+  }).format(BUILD_DATE)
+const BUILD_DATE_EN = formatBuildDate('en-US')
+const BUILD_DATE_ZH = formatBuildDate('zh-CN')
+
 export default defineConfig({
   title: 'AI Portfolio - Crystaria',
   description:
@@ -153,6 +164,14 @@ export default defineConfig({
     editLink: {
       pattern: EDIT_LINK_PATTERN,
       text: 'Edit this page on GitHub'
+    }
+  },
+
+  // Expose the build date to Markdown/Vue as compile-time constants.
+  vite: {
+    define: {
+      __BUILD_DATE_EN__: JSON.stringify(BUILD_DATE_EN),
+      __BUILD_DATE_ZH__: JSON.stringify(BUILD_DATE_ZH)
     }
   },
 

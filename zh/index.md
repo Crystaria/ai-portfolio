@@ -154,6 +154,9 @@ import { onMounted } from 'vue'
 // 唯一数据源：.vitepress/_data/downloads.json（由同步脚本更新）
 import downloads from '../.vitepress/_data/downloads.json'
 
+// 由 .vitepress/config.js 在构建时注入。
+const buildDate = __BUILD_DATE_ZH__
+
 onMounted(() => {
   try {
     const skills = Object.values(downloads).filter(s => s.role === 'builder')
@@ -200,6 +203,6 @@ onMounted(() => {
 
 ---
 
-*最后更新：2026 年 4 月 7 日*
+*最后更新：{{ buildDate }}*
 
 </div>

@@ -158,6 +158,9 @@ import { onMounted } from 'vue'
 // Single source of truth: .vitepress/_data/downloads.json (updated by the sync script)
 import downloads from './.vitepress/_data/downloads.json'
 
+// Injected by .vitepress/config.js at build time.
+const buildDate = __BUILD_DATE_EN__
+
 onMounted(() => {
   try {
     const skills = Object.values(downloads).filter(s => s.role === 'builder')
@@ -204,6 +207,6 @@ onMounted(() => {
 
 ---
 
-*Last updated: April 7, 2026*
+*Last updated: {{ buildDate }}*
 
 </div>
