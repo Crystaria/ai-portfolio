@@ -2,6 +2,13 @@
 
 **Showcasing AI-human collaborative projects built with Paw (小爪) and Kyle (小克).**
 
+## 🌐 站点镜像与全球节点
+
+| Node | Platform | Access | URL |
+|------|----------|--------|-----|
+| **Primary** (国内加速) | Cloudflare Pages | 国内电信/移动/联通 直连秒开 | [https://ai-portfolio-75t.pages.dev](https://ai-portfolio-75t.pages.dev) |
+| **Secondary** (海外主站) | Vercel | 海外/全球 CDN 加速 | [https://ai-portfolio-beta-ten.vercel.app](https://ai-portfolio-beta-ten.vercel.app) |
+
 ---
 
 ## 🎯 About
