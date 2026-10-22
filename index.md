@@ -1,40 +1,45 @@
 ---
 layout: home
 title: AI Portfolio - Crystaria
-titleTemplate: Showcasing My Collaboration with AI
+titleTemplate: AI Evaluation & Logic Boundary Testing
 
 hero:
   name: AI Portfolio
   text: Crystaria (with Paw and Kyle)
-  tagline: Showcasing my collaborative projects with AI
+  tagline: Evidence-driven AI evaluation, multi-turn interaction cases, and logic-boundary testing.
   actions:
     - theme: brand
-      text: View Projects
-      link: /projects/
+      text: Read Eval Reports
+      link: /evals/
     - theme: alt
-      text: GitHub
-      link: https://github.com/Crystaria
+      text: Interaction Cases
+      link: /cases/
 
 features:
+  - icon: 🔬
+    title: AI Evaluation
+    details: Prompt robustness, hallucination audits and reproducible verdicts
+    link: /evals/
+  - icon: 🧭
+    title: Interaction Cases
+    details: Multi-turn branching, information gaps and state drift
+    link: /cases/
   - icon: 🛠️
-    title: Application Builder
-    details: Building MCP skills, AI tools, and standalone applications
-    link: /projects/#builder
-  - icon: 🤝
-    title: Community Contributor
-    details: Contributing to open-source projects like SillyTavern
-    link: /projects/#contributor
-  - icon: ✨
-    title: Experience Optimizer
-    details: Creating installers and tools for better UX
-    link: /projects/#optimizer
+    title: Shipped Work
+    details: "MCP skills and upstream contributions, including SillyTavern PR #43"
+    link: /projects/
 ---
 
 <div class="portfolio-home">
 
 ## Welcome 👋
 
-This portfolio showcases my work as a **human-AI collaborator**. Working alongside my AI partners **Paw** (小爪) and **Kyle** (小克), I've created a range of projects that demonstrate the power of thoughtful AI partnership.
+This portfolio is an **evidence log of AI collaboration**: what we shipped, how we
+tested it, and where it broke. Working alongside my AI partners **Paw** (小爪,
+validator) and **Kyle** (小克, builder), I design interaction cases and evaluation
+reports for multi-turn logic, information gaps and boundary failures.
+
+Start with the evidence: [evaluation reports](/evals/) · [interaction cases](/cases/) · [shipped work](/projects/).
 
 ### 🎯 Our Collaboration Model
 

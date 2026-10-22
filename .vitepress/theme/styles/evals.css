@@ -1,0 +1,269 @@
+/* evals.css — AI evaluation & interaction-case surfaces
+ * Loaded after cards.css so PortfolioCard can build on the shared .card look.
+ * Covers: section index pages, card grid, PortfolioCard, EvalVerdict.
+ */
+
+/* === Section pages (/cases/, /evals/, /about/) === */
+.section-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section-page--narrow {
+  max-width: 800px;
+}
+
+.section-page h1 {
+  margin-top: 0;
+  color: var(--vp-c-text);
+}
+
+.section-intro {
+  max-width: 760px;
+  margin: 0 0 2rem;
+  color: var(--vp-c-text-mute);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.section-kicker {
+  margin: 0 0 0.5rem;
+  color: var(--vp-c-text-subtle);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vp-c-border-muted);
+  color: var(--vp-c-text-mute);
+  font-size: 0.9rem;
+}
+
+/* === Card grid === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-grid-min, 320px), 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 2rem;
+  border: 1px dashed var(--vp-c-border);
+  border-radius: var(--vp-radius-medium);
+  background-color: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-mute);
+  text-align: center;
+}
+
+/* === PortfolioCard === */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio-card.is-featured {
+  border-color: rgba(88, 166, 255, 0.45);
+  box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.08) inset;
+}
+
+.portfolio-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-card__heading {
+  min-width: 0;
+}
+
+.portfolio-card__kind {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  color: var(--vp-c-text-subtle);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-card__title {
+  margin: 0;
+  color: var(--vp-c-text);
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.portfolio-card__title a {
+  color: var(--vp-c-text);
+  text-decoration: none;
+}
+
+.portfolio-card__title a:hover {
+  color: var(--vp-c-brand);
+}
+
+.portfolio-card__tldr {
+  margin: 0 0 1rem;
+  color: var(--vp-c-text-mute);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.portfolio-card__capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.capability-tag {
+  padding: 3px 9px;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: 999px;
+  background-color: rgba(88, 166, 255, 0.08);
+  color: var(--vp-c-brand);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.portfolio-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--vp-c-border-muted);
+  border-bottom: 1px solid var(--vp-c-border-muted);
+}
+
+.portfolio-card__metrics .metric {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+  min-width: 0;
+}
+
+.metric__label {
+  margin: 0;
+  color: var(--vp-c-text-subtle);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metric__value {
+  margin: 0;
+  color: var(--vp-c-text);
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  color: var(--vp-c-text-subtle);
+  font-size: 0.78rem;
+}
+
+.portfolio-card__date {
+  white-space: nowrap;
+}
+
+.portfolio-card__link {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.portfolio-card__link:hover {
+  text-decoration: underline;
+}
+
+/* === EvalVerdict tri-state badge === */
+.eval-verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 3px 9px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.eval-verdict.is-compact {
+  padding: 1px 7px;
+  font-size: 0.68rem;
+}
+
+.eval-verdict__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.eval-verdict.is-pass {
+  border-color: rgba(63, 185, 80, 0.45);
+  background-color: rgba(63, 185, 80, 0.12);
+  color: var(--vp-c-success);
+}
+
+.eval-verdict.is-conditional {
+  border-color: rgba(210, 153, 34, 0.45);
+  background-color: rgba(210, 153, 34, 0.12);
+  color: var(--vp-c-warning);
+}
+
+.eval-verdict.is-fail {
+  border-color: rgba(248, 81, 73, 0.45);
+  background-color: rgba(248, 81, 73, 0.12);
+  color: var(--vp-c-danger);
+}
+
+/* === Report / case metadata row === */
+.report-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.75rem;
+  color: var(--vp-c-text-subtle);
+  font-size: 0.85rem;
+}
+
+.section-page .report-meta time {
+  font-family: var(--vp-font-family-mono);
+}
+
+@media (max-width: 768px) {
+  .section-page {
+    padding: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -34,20 +34,23 @@ npm run preview
 
 ## 📦 文件结构
 
-```
+```text
 ai-portfolio/
 ├── .vitepress/
 │   ├── config.js          # VitePress 配置
 │   ├── _data/
-│   │   └── downloads.json # 项目元数据
+│   │   └── downloads.json # 下载量 / 项目元数据
+│   ├── loaders/
+│   │   └── content.data.ts # 统一卡片加载器（work / cases / evals）
 │   └── theme/
 │       ├── index.js       # 主题入口
-│       ├── components/    # ProjectsGrid.vue
-│       └── styles/        # tokens / base / cards / home / projects CSS
-├── projects/
-│   ├── index.md           # 项目列表页
-│   ├── template.md        # 项目模板
-│   └── *.md               # 各项目详情页
+│       ├── components/    # ProjectsGrid / PortfolioCard / CardGrid / EvalVerdict
+│       └── styles/        # tokens / base / cards / home / projects / evals CSS
+├── cases/                 # 交互案例 + 索引
+├── evals/                 # 评测报告 + 索引
+├── about/                 # 关于页
+├── projects/              # 作品详情 + 索引（URL 保持 /projects/）
+├── zh/                    # 中文镜像：about / cases / evals / projects
 ├── index.md               # 首页
 ├── package.json
 ├── README.md
@@ -92,6 +95,43 @@ ai-portfolio/
 
 **更新时机：** 发布新技能或数据变化时手动更新
 
+### 内容加载器
+
+位置：`.vitepress/loaders/content.data.ts`
+
+`createContentLoader` 同时读取：
+
+- `projects/*.md` → `kind: 'work'`（保持既有 `/projects/` URL）
+- `cases/*.md` → `kind: 'case'`
+- `evals/*.md` → `kind: 'eval'`
+- 以上三者的 `zh/` 镜像
+
+它是所有 `<CardGrid>` 卡片页面的唯一数据源。`/projects/` 现有的按角色分组网格
+仍使用 `downloads.json` 提供下载量与外部链接，这些页面同时以 `kind: 'work'`
+暴露给 loader，供新的卡片页面复用。
+
+输出统一卡片结构：`url` / `kind` / `lang` / `title` / `tldr` /
+`capabilities` / `metrics` / `verdict` / `date` / `featured`。
+
+过滤规则：目录索引页、`template.md`、`draft: true` 不会成为卡片。
+
+**卡片 frontmatter 示例：**
+
+```yaml
+title: Content Loader Contract
+tldr: "One loader feeds Work, Interaction Cases and Evaluation Reports."
+date: '2026-10-22'
+capabilities: [content-pipeline, schema-validation]
+metrics:
+  - label: Schema errors
+    value: '0'
+verdict: pass
+featured: true
+```
+
+**结论枚举：** `pass` / `conditional` / `fail`。三态徽章由
+`EvalVerdict.vue` 渲染，卡片由 `PortfolioCard.vue` + `CardGrid.vue` 渲染。
+
 ### GitHub Stars
 
 通过前端 JavaScript 动态获取 GitHub API
@@ -104,8 +144,8 @@ ai-portfolio/
 
 位置：`.vitepress/config.js`
 
-- 导航栏：Home, Projects
-- 侧边栏：按角色和项目分类
+- 导航栏：Work / Interaction Cases / Eval Reports / About（中文：作品 / 交互案例 / 评测报告 / 关于）
+- 侧边栏：按角色和项目分类（`/projects/`）
 - 社交链接：GitHub
 - 页脚：`Crystaria (with Paw and Kyle)`
 - 外观：`appearance: 'force-dark'`（强制暗色，无需客户端脚本）
@@ -120,15 +160,34 @@ ai-portfolio/
 - `cards.css`：卡片、标签、按钮等共享组件样式
 - `home.css`：首页专属样式
 - `projects.css`：项目详情页专属样式（`/projects/*` 与 `/zh/projects/*` 共用）
+- `evals.css`：专区页面、卡片网格、EvalVerdict 三态徽章样式
 
 ---
 
-## 📝 添加新项目
+## 📝 添加内容
+
+### 作品 / 项目
 
 1. 在 `.vitepress/_data/downloads.json` 添加条目
-2. 在 `projects/` 创建 `[slug].md` 文件（参考 template.md）
-3. 更新首页统计数据（如需要）
-4. 本地测试：`npm run dev`
+2. 在 `projects/` 创建 `[slug].md` 文件（参考 `template.md`）
+3. 在 `zh/projects/` 创建对应中文页
+4. 更新首页统计数据（如需要）
+5. 本地测试：`npm run dev`
+
+### 交互案例
+
+1. 在 `cases/[slug].md` 写入卡片 frontmatter 与正文
+2. 在 `zh/cases/[slug].md` 创建中文镜像
+3. `/cases/` 与 `/zh/cases/` 索引会自动读取，无需改页面代码
+
+### 评测报告
+
+1. 在 `evals/[slug].md` 写入 `verdict`、`metrics`、`capabilities`
+2. 在 `zh/evals/[slug].md` 创建中文镜像
+3. 正文必须包含：命题、方法、证据、残留风险
+4. `/evals/` 与 `/zh/evals/` 索引会自动读取
+
+未完成的内容设置 `draft: true`，loader 会自动从所有卡片列表中排除。
 
 ---
 
@@ -137,7 +196,7 @@ ai-portfolio/
 - **框架：** VitePress 1.6.4
 - **样式：** Custom CSS (GitHub Dark Theme)
 - **托管：** Vercel (auto-deploy on push)
-- **数据：** Static JSON + GitHub API
+- **数据：** Static JSON + Markdown frontmatter（内容加载器）+ GitHub API
 
 ---
 
@@ -157,4 +216,4 @@ ai-portfolio/
 
 ---
 
-**最后更新：** 2026-03-23
+**最后更新：** 2026-10-22

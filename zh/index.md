@@ -1,39 +1,43 @@
 ---
 layout: home
 title: AI 作品集 - Crystaria
-titleTemplate: 展示我和 AI 的协作
+titleTemplate: AI 评测与逻辑边界测试
 hero:
   name: AI 作品集
   text: Crystaria (与 Paw 和 Kyle)
-  tagline: 展示我和 AI 的协作项目
+  tagline: 以证据驱动的 AI 评测、多轮交互案例与逻辑边界测试。
   actions:
     - theme: brand
-      text: 查看项目
-      link: /zh/projects/
+      text: 阅读评测报告
+      link: /zh/evals/
     - theme: alt
-      text: GitHub
-      link: https://github.com/Crystaria
+      text: 交互案例
+      link: /zh/cases/
 
 features:
+  - icon: 🔬
+    title: AI 评测
+    details: Prompt 鲁棒性、幻觉审计与可复现的结论
+    link: /zh/evals/
+  - icon: 🧭
+    title: 交互案例
+    details: 多轮分支、信息差与状态漂移
+    link: /zh/cases/
   - icon: 🛠️
-    title: 应用开发者
-    details: 构建 MCP 技能、AI 工具和独立应用
-    link: /zh/projects/#builder
-  - icon: 🤝
-    title: 社区贡献者
-    details: 为 SillyTavern 等开源项目做贡献
-    link: /zh/projects/#contributor
-  - icon: ✨
-    title: 体验优化师
-    details: 创建安装程序优化工具和用户体验
-    link: /zh/projects/#optimizer
+    title: 已发布作品
+    details: "MCP 技能与上游贡献，包括 SillyTavern PR #43"
+    link: /zh/projects/
 ---
 
 <div class="portfolio-home">
 
 ## 欢迎 👋
 
-本作品集展示了我作为 **AI 与人类协作者** 的工作成果。与我的 AI 合作伙伴 **Paw**（小爪）和 **Kyle**（小克）一起，我们创建了一系列展示深思熟虑的 AI 合作伙伴关系的项目。
+本作品集是一份 **AI 协作的证据日志**：我们发布了什么、如何测试、又在哪里失效。
+我与 AI 伙伴 **Paw**（小爪，验证者）和 **Kyle**（小克，构建者）一起，围绕多轮
+逻辑、信息差与边界失效设计交互案例和评测报告。
+
+从证据开始：[评测报告](/zh/evals/) · [交互案例](/zh/cases/) · [已发布作品](/zh/projects/)。
 
 ### 🎯 我们的协作模式
 

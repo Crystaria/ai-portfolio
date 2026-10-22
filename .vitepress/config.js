@@ -6,7 +6,8 @@ const EDIT_LINK_PATTERN =
 
 export default defineConfig({
   title: 'AI Portfolio - Crystaria',
-  description: 'Showcasing AI-human collaborative projects',
+  description:
+    'AI evaluation, interaction-case analysis and logic-boundary testing by Crystaria, with Paw and Kyle.',
 
   // Always render in dark mode. VitePress applies the `dark` class before
   // paint, so no client-side DOM patching is required.
@@ -41,18 +42,21 @@ export default defineConfig({
       lang: 'en',
       link: '/',
       title: 'AI Portfolio - Crystaria',
-      description: 'Showcasing AI-human collaborative projects'
+      description:
+        'AI evaluation, interaction-case analysis and logic-boundary testing by Crystaria, with Paw and Kyle.'
     },
     zh: {
       label: '简体中文',
       lang: 'zh',
       link: '/zh/',
       title: 'AI 作品集 - Crystaria',
-      description: '展示 AI 与人类协作的项目',
+      description: 'Crystaria 与 Paw、Kyle 的 AI 评测、交互案例与逻辑边界测试作品集。',
       themeConfig: {
         nav: [
-          { text: '首页', link: '/zh/' },
-          { text: '项目', link: '/zh/projects/' }
+          { text: '作品', link: '/zh/projects/' },
+          { text: '交互案例', link: '/zh/cases/' },
+          { text: '评测报告', link: '/zh/evals/' },
+          { text: '关于', link: '/zh/about/' }
         ],
         sidebar: {
           '/zh/projects/': [
@@ -93,8 +97,10 @@ export default defineConfig({
     logo: '/logo.svg',
 
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Projects', link: '/projects/' }
+      { text: 'Work', link: '/projects/' },
+      { text: 'Interaction Cases', link: '/cases/' },
+      { text: 'Eval Reports', link: '/evals/' },
+      { text: 'About', link: '/about/' }
     ],
 
     sidebar: {
