@@ -5,6 +5,24 @@ export default defineConfig({
   title: 'AI Portfolio - Crystaria',
   description: 'Showcasing AI-human collaborative projects',
 
+  // Phase 0: keep internal docs and temp files out of the build so they are
+  // never published as public pages. VitePress already ignores
+  // "**/node_modules/**" and "**/dist/**" by default.
+  srcExclude: [
+    'notes/**',
+    'PRD-*',
+    '诊断报告*',
+    '20*.md', // dated work logs, e.g. 2026-04-07-工作记录.md
+    '0[1-9]-*.md', // internal research / framework reports
+    'GitHub-Stars-*.md',
+    'SYNC_SETUP.md',
+    'README.md',
+    '**/README.md',
+    'CLAUDE.md',
+    '**/CLAUDE.md',
+    '**/template.md' // project page template
+  ],
+
   head: [],
 
   // Copy static files from public directory
@@ -109,7 +127,7 @@ export default defineConfig({
 
   themeConfig: {
     appearance: false,
-    logo: '/logo.png',
+    logo: '/logo.svg',
 
     nav: [
       { text: 'Home', link: '/' },

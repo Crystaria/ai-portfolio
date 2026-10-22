@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build && cp -r .vitepress/public/_data .vitepress/dist/_data 2>/dev/null || true",
-    "build:clean": "rm -rf .vitepress/dist && npm run build",
+    "build": "vitepress build",
+    "build:clean": "rm -rf .vitepress/dist && vitepress build",
     "preview": "vitepress preview"
   },
   "keywords": ["portfolio", "ai", "vitepress"],

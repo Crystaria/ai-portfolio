@@ -150,51 +150,50 @@ This portfolio showcases my work as a **human-AI collaborator**. Working alongsi
 
 <script setup>
 import { onMounted } from 'vue'
+// Single source of truth: .vitepress/_data/downloads.json (updated by the sync script)
+import downloads from './.vitepress/_data/downloads.json'
 
 onMounted(() => {
-  fetch('/_data/downloads.json')
-    .then(res => res.json())
-    .then(data => {
-      const skills = Object.values(data).filter(s => s.role === 'builder')
-      skills.sort((a, b) => b.downloads - a.downloads)
-      
-      // Update stats
-      const total = skills.reduce((sum, s) => sum + (s.downloads || 0), 0)
-      const totalEl = document.getElementById('total-downloads')
-      const countEl = document.getElementById('skills-count')
-      if (totalEl) totalEl.textContent = total.toLocaleString()
-      if (countEl) countEl.textContent = skills.length
-      
-      // Build table
-      const tbody = document.getElementById('skills-tbody')
-      if (!tbody) return
-      
-      tbody.innerHTML = skills.map(skill => {
-        const clawhubLink = skill.clawhubUrl 
-          ? `<a href="${skill.clawhubUrl}" target="_blank" class="link-btn clawhub">🦞 ClawHub</a>` 
-          : ''
-        const githubLink = skill.githubUrl 
-          ? `<a href="${skill.githubUrl}" target="_blank" class="link-btn github">📂 GitHub</a>` 
-          : ''
-        return `
-          <tr>
-            <td class="skill-name">
-              <span class="skill-icon">🛠️</span>
-              ${skill.name}
-            </td>
-            <td class="downloads-count">${(skill.downloads || 0).toLocaleString()}</td>
-            <td class="skill-links">${clawhubLink}${githubLink}</td>
-          </tr>
-        `
-      }).join('')
-    })
-    .catch(err => {
-      console.error('Failed to load skills data:', err)
-      const tbody = document.getElementById('skills-tbody')
-      if (tbody) {
-        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:2rem;color:var(--vp-c-warning);">Failed to load data</td></tr>'
-      }
-    })
+  try {
+    const skills = Object.values(downloads).filter(s => s.role === 'builder')
+    skills.sort((a, b) => b.downloads - a.downloads)
+
+    // Update stats
+    const total = skills.reduce((sum, s) => sum + (s.downloads || 0), 0)
+    const totalEl = document.getElementById('total-downloads')
+    const countEl = document.getElementById('skills-count')
+    if (totalEl) totalEl.textContent = total.toLocaleString()
+    if (countEl) countEl.textContent = skills.length
+
+    // Build table
+    const tbody = document.getElementById('skills-tbody')
+    if (!tbody) return
+
+    tbody.innerHTML = skills.map(skill => {
+      const clawhubLink = skill.clawhubUrl
+        ? `<a href="${skill.clawhubUrl}" target="_blank" class="link-btn clawhub">🦞 ClawHub</a>`
+        : ''
+      const githubLink = skill.githubUrl
+        ? `<a href="${skill.githubUrl}" target="_blank" class="link-btn github">📂 GitHub</a>`
+        : ''
+      return `
+        <tr>
+          <td class="skill-name">
+            <span class="skill-icon">🛠️</span>
+            ${skill.name}
+          </td>
+          <td class="downloads-count">${(skill.downloads || 0).toLocaleString()}</td>
+          <td class="skill-links">${clawhubLink}${githubLink}</td>
+        </tr>
+      `
+    }).join('')
+  } catch (err) {
+    console.error('Failed to load skills data:', err)
+    const tbody = document.getElementById('skills-tbody')
+    if (tbody) {
+      tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:2rem;color:var(--vp-c-warning);">Failed to load data</td></tr>'
+    }
+  }
 })
 </script>
 
